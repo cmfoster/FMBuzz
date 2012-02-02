@@ -8,7 +8,13 @@
     height: 425px;
     margin-left: 250px;
 /*    border: 1px solid black;*/
-  
+}
+.row#bottom-row {
+    height: 100%;
+    width:100%; 
+    margin-left:0;
+    border-radius: 50px 5px 5px 5px;
+/*    border:1px solid black;*/
 }
   .well#chatusers {
     overflow: auto;
@@ -25,7 +31,6 @@
 .span6#data {
     background-color: #ABABAB;
     border-radius: 2px 2px 2px 2px;
-    margin-right:1px;
     margin-right: 0;
     height: 100%;
 }
@@ -38,6 +43,29 @@
     border-radius: 2px 2px 2px 2px;
 }
 
+.span8#left-toolbox {
+    width:748px; 
+    height:100%;
+/*    border:1px solid black;*/
+    margin-left: 0;
+    height: 100%;
+    background-color: #CBE86B;
+    border-radius: 2px 2px 2px 2px;
+
+}
+
+.span6#right-toolbox {
+    height:100%;
+/*    border: 1px solid black;*/
+    float: right;
+    width: 340px;
+    margin-left: 15px;
+    height: 100%;
+    background-color: #CBE86B;
+    border-radius: 2px 2px 2px 2px;
+
+
+}
 </style>
 
     <div class="container-fluid">
@@ -67,7 +95,7 @@
 
 	</div>
 	<div class="well">
-	  <h5>Event Details</h5>
+	  <h5>Playlists</h5>
 	  <ul>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
@@ -78,13 +106,20 @@
 <div class="row" id="tools">
 
 <div class="span8" id="chatbox">
-fds
+
 </div>
 
 <div class="span6" id="data">
-stuff
+
 </div>
-<div class="span12" id="bottomtools">
-h
-</div>
+  <div class="span12" id="bottomtools">
+    <div class="row" id="bottom-row">
+      <div class="span8" id="left-toolbox">
+      
+      </div>
+      <div class="span6" id="right-toolbox">
+
+      </div>
+    </div>
+  </div>
 </div>
