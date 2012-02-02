@@ -1,0 +1,2 @@
+class Playlistable < ActiveRecord::Base
+end

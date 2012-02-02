@@ -1,0 +1,86 @@
+    <div class="container-fluid">
+      <div class="sidebar">
+        <div class="well">
+          <h5>Sidebar</h5>
+          <ul>
+
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+          <h5>Sidebar</h5>
+
+          <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+
+            <li><a href="#">Link</a></li>
+          </ul>
+          <h5>Sidebar</h5>
+          <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="content">
+        <!-- Main hero unit for a primary marketing message or call to action -->
+        <div class="hero-unit">
+	  <h1 id="heroheader"><%= @city.city%> Radio</h1>
+          <p><%= @city.description%></p>
+          <p><a class="btn primary large">Learn more &raquo;</a></p>
+        </div>
+
+        <!-- Example row of columns -->
+        <div class="row">
+	  <% @shows.sort_by{|a|a.active ? 0:1}.each do |show|%>
+          <div class="span6">
+            <h2><%= show.name.titleize if show.name %> <span class="label"><%= show.station.upcase if show.station%></span> </h2>
+            <p><%= show.about.truncate(120) if show.about %></p>
+	    <p>Current Topic: <span class="label notice"><%= show.topic if show.topic%></span></p>
+	    <% if show.active %>
+	      <span class="label success" style="font-size:20px;">On Air</span>
+	      <br />
+	      <br />
+	      <p><%= link_to "Join the show! &raquo;".html_safe, show_path(show, :city => @city.city), :class => 'btn' %></p>
+	    <% else %>
+	      <span class="label important" style="font-size:20px;">Offline</span>
+    	    <% end %>
+	</div>
+	  <% end %>
+        </div>
+
+        <hr>
+
+        <!-- Example row of columns -->
+<!--        <div class="row">
+          <div class="span6">
+            <h2>Heading</h2>
+            <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+          </div>
+
+          <div class="span5">
+            <h2>Heading</h2>
+             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+         </div>
+          <div class="span5">
+            <h2>Heading</h2>
+
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+          </div>
+        </div>-->
+
+        <footer>
+          <p>&copy; Music Request! 2012</p>
+
+        </footer>
+      </div>
+    </div>
