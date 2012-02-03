@@ -18,6 +18,9 @@ class Show < ActiveRecord::Base
   def active
      Time.now >= self.start_time && Time.now <= self.end_time
   end
-
+  
+  def toporder
+    questions.sort{|a1, a2| a2.likes.size <=> a1.likes.size}
+  end
   
 end

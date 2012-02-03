@@ -23,8 +23,10 @@
     background-color: #ABABAB;
     border-radius: 2px 2px 2px 2px;
     margin-left: 1px;
+    padding-left: 0px;
     width: 748px;
     height: 100%;
+    overflow: auto;
 }
 
 .span6#data {
@@ -65,6 +67,17 @@
 
 
 }
+#cncl {
+    border: 1px solid #CCCCCC;
+    background-color: #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #808080;
+    display: inline-block;
+    font-size: 13px;
+    height: 18px;
+    line-height: 18px;
+    padding: 4px;
+}
 </style>
 
 <div class="container-fluid">
@@ -85,11 +98,20 @@
       </ul>
     </div>
     <div class="well">
-      <h5>Event Details</h5>
-	<ul>
-	  <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-        </ul>
+      <div id="eventlinks">
+	<h5>Event Details</h5>
+	  <ul>
+	    <li><%= link_to "Set Show Name", '#', :id => 'set-name-btn'%></li>
+	    <li><%= link_to "Set Show Times", '#'%></li>
+	  </ul>
+      </div>
+      <div id="setname2" style="display:none">
+	<%=form_for current_show do |f| %>
+	  <%= f.text_field :name, :style => 'width:170px;' %>
+	  <%= f.submit "update", :class => 'submit-name', :style => 'margin-top: 5px;'%>
+	  <%= link_to "Cancel", '#', :class => 'submit-name', :id => 'cncl'%>
+	<%end%>
+      </div>
     </div>
     <div class="well">
       <h5>Playlists</h5>
@@ -101,7 +123,9 @@
   </div>
   <div class="row" id="tools">
     <div class="span8" id="chatbox">
-      Self explanitory, Chat room box goes here.
+      <h2 style="text-align:center"> <%="#{current_show.name}'s Social Chat"%></h2>
+      <hr style="margin-top:0;"/>
+      <%= render :partial => 'showchatdiv'%>
     </div>
   <div class="span6" id="data">
     This will be where the hosts twitter stream and or Information box goes. This could hold fresh news data, something currently happening
@@ -118,3 +142,16 @@ that he may want to talk to his audience about.
     </div>
   </div>
 </div>
+
+<script>
+$("#set-name-btn").click(function () {
+  $( "#eventlinks" ).hide("slide", { direction: "left" }, 700, function() {
+    $("#setname2").show("slide", { direction: "right" }, 700);
+  });
+});
+$(".submit-name").click(function () {
+  $("#setname2").hide("slide", { direction: "left" }, 700, function() {
+    $("#eventlinks").show("slide", { direction: "right" }, 700);
+  });
+});
+</script>

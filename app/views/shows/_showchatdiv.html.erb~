@@ -1,0 +1,3 @@
+<% @messages.each do |message|%>
+  <%= "<p><strong>#{message.author}</strong> <i>says</i> <strong>#{message.msg}</strong></p>".html_safe %>
+<% end %>

@@ -8,6 +8,7 @@ class Show < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   has_many :playlists
   has_many :messages
+  has_many :questions
   belongs_to :location
   
   def self.active
@@ -17,6 +18,9 @@ class Show < ActiveRecord::Base
   def active
      Time.now >= self.start_time && Time.now <= self.end_time
   end
-
+  
+  def toporder
+    questions.sort{|a1, a2| a1.likes.size <=> a2.likes.size}
+  end
   
 end

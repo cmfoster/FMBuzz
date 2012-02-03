@@ -8,7 +8,7 @@ class ShowsController < ApplicationController
       @message = @show.messages.build
       @locations = Location.all
       @city = Location.find_by_city(params[:city])
-      @questions = @show.questions
+      @questions = @show.toporder #def in showmodel
   end
   
   def vote
@@ -25,6 +25,7 @@ class ShowsController < ApplicationController
   def dashboard
     @city = Location.find_by_city(params[:city])
     @locations = Location.all
+    @messages = current_show.messages(:order => 'created_at DESC')
   end
   
   def edit

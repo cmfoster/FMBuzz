@@ -26,7 +26,6 @@
         <div class="container-fluid">
           <%= link_to "Home", root_path(:city => @city.city), :class => 'brand'  if @city %>
 	  <%= link_to "Home", root_path, :class => 'brand' unless @city %>
-	  <% unless current_url(show_dashboard_path)%>
 	  <ul class="nav" data-dropdown="dropdown">
 	    <li class="dropdown">	
 	      <% if @city %>
@@ -44,7 +43,6 @@
 	      </ul>
 	    </li>
           </ul>
-	  <%end%>
 	  <% if current_user || current_show %>
 	    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete , :class => 'btn red pull-right', :style => 'margin-top: 5px;'%>
 	    <p class="pull-right" style="margin-right:70px;">Logged in as <%= link_to current_user.name, '#' if current_user %> <%= link_to current_show.host, '#' if current_show %></p>
