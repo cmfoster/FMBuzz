@@ -143,6 +143,28 @@ that he may want to talk to his audience about.
   </div>
 </div>
 
+<div id="container">
+  <div class="container-i">
+    <h3>New Playlist</h3>
+    <%= form_for [@show, @playlist], :url => show_playlists_path, :action => :create, :html => { :multipart => true } do |f| %>
+      <div class="txt-fld">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <div style="clear:both"></div>
+      </div>
+      <div class="txt-fld">
+        <%= f.label "nml / m3u file" %>
+        <%= f.file_field :m3u %>
+        <div style="clear:both"></div>
+      </div>
+      <div class="btn-fld">
+        <%= f.submit %>
+        <div style="clear:both"></div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <script>
 $("#set-name-btn").click(function () {
   $( "#eventlinks" ).hide("slide", { direction: "left" }, 700, function() {

@@ -69,7 +69,7 @@
 }
 #cncl {
     border: 1px solid #CCCCCC;
-    background-color: #808080;
+    background-color: #CCCCCC;
     border-radius: 3px 3px 3px 3px;
     color: #808080;
     display: inline-block;
@@ -142,6 +142,28 @@ that he may want to talk to his audience about.
     </div>
   </div>
 </div>
+
+<div id="container">
+  <div class="container-i">
+    <h3>New Playlist</h3>
+    <%= form_for [@show, @playlist], :url => show_playlists_path, :action => :create, :html => { :multipart => true } do |f| %>
+      <div class="txt-fld">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <div style="clear:both"></div>
+      </div>
+      <div class="txt-fld">
+        <%= f.label "nml / m3u file" %>
+        <%= f.file_field :m3u %>
+        <div style="clear:both"></div>
+      </div>
+      <div class="btn-fld">
+        <%= f.submit %>
+        <div style="clear:both"></div>
+      </div>
+    <% end %>
+  </div>
+</d
 
 <script>
 $("#set-name-btn").click(function () {

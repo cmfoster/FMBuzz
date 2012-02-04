@@ -9,12 +9,14 @@ FMBuzz::Application.routes.draw do
   
   resources :users
   
-  resources :shows do 
+  resources :shows do
+    resources :playlists
     resources :messages
     get :vote
     get :dashboard
   end
   
+  resources :playlists, :only => [:show]
   match '/city' => 'home#cityindex'
   
 end

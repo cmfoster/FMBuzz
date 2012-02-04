@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+  <title>Favorites</title>
+  <date>2012-02-04T04:35:26.8708980Z</date>
+  <trackList>
+    <track>
+      <title>Can't Tell Me Nothing</title>
+      <creator>Kanye West</creator>
+      <album>Graduation</album>
+      <trackNum>1</trackNum>
+      <location>Music/Mp3s/Kanye%20West/Graduation/can't%20tell%20me%20nothing.mp3</location>
+    </track>
+    <track>
+      <title>Figure.09</title>
+      <creator>Linkin Park</creator>
+      <album>Meteora</album>
+      <trackNum>8</trackNum>
+      <location>Music/Mp3s/Figure.09.mp3</location>
+    </track>
+    <track>
+      <title>Panic Switch</title>
+      <creator>Silversun Pickups</creator>
+      <album>Swoon</album>
+      <trackNum>5</trackNum>
+      <location>Music/Mp3s/Panic%20Switch.mp3</location>
+    </track>
+  </trackList>
+</playlist>

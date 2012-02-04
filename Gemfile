@@ -10,7 +10,7 @@ gem 'devise'
 gem 'json'
 gem 'paperclip'
 gem 'geocoder'
-gem 'm3uzi', :git => 'https://github.com/zencoder/m3uzi.git'
+gem "nokogiri", "~> 1.5.0"
 gem 'delayed_job'
 gem 'fb_graph'
 gem 'omniauth-facebook'

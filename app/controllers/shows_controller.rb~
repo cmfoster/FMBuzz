@@ -23,6 +23,8 @@ class ShowsController < ApplicationController
   end
   
   def dashboard
+    @show = current_show
+    @show.playlists.build
     @city = Location.find_by_city(params[:city])
     @locations = Location.all
     @messages = current_show.messages(:order => 'created_at DESC')

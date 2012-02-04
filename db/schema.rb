@@ -10,12 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120201215312) do
+ActiveRecord::Schema.define(:version => 20120204054226) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "playlist_id"
   end
 
   create_table "locations", :force => true do |t|
@@ -46,6 +47,10 @@ ActiveRecord::Schema.define(:version => 20120201215312) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "m3u_file_name"
+    t.string   "m3u_content_type"
+    t.integer  "m3u_file_size"
+    t.datetime "m3u_updated_at"
   end
 
   create_table "questions", :force => true do |t|

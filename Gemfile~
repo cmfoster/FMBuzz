@@ -14,7 +14,7 @@ gem 'm3uzi', :git => 'https://github.com/zencoder/m3uzi.git'
 gem 'delayed_job'
 gem 'fb_graph'
 gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+# gem 'omniauth-twitter'
 gem 'twitter-bootstrap-rails'
 gem 'acts_as_votable'
 

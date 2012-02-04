@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/zencoder/m3uzi.git
-  revision: 9b42c82905191e6f5bc51b8d6ce14d6a919c82a7
-  specs:
-    m3uzi (0.4.3)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -92,6 +86,7 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.4)
     multipart-post (1.1.4)
+    nokogiri (1.5.0)
     oauth2 (0.5.2)
       faraday (~> 0.7)
       multi_json (~> 1.0)
@@ -186,7 +181,7 @@ DEPENDENCIES
   geocoder
   jquery-rails
   json
-  m3uzi!
+  nokogiri (~> 1.5.0)
   omniauth-facebook
   paperclip
   rails (= 3.1.0)
