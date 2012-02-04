@@ -92,7 +92,6 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.4)
     multipart-post (1.1.4)
-    oauth (0.4.5)
     oauth2 (0.5.2)
       faraday (~> 0.7)
       multi_json (~> 1.0)
@@ -101,14 +100,9 @@ GEM
       rack
     omniauth-facebook (1.2.0)
       omniauth-oauth2 (~> 1.0.0)
-    omniauth-oauth (1.0.0)
-      oauth
-      omniauth (~> 1.0)
     omniauth-oauth2 (1.0.0)
       oauth2 (~> 0.5.0)
       omniauth (~> 1.0)
-    omniauth-twitter (0.0.7)
-      omniauth-oauth (~> 1.0)
     orm_adapter (0.0.5)
     paperclip (2.5.2)
       activerecord (>= 2.3.0)
@@ -194,7 +188,6 @@ DEPENDENCIES
   json
   m3uzi!
   omniauth-facebook
-  omniauth-twitter
   paperclip
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)

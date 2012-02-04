@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="/images/favicon.ico" />
+<!--  <link rel="shortcut icon" href="/images/favicon.ico" />-->
   <title><%= @city.city if @city%> Radio</title>
   <%= stylesheet_link_tag 'application', 'home' %>
   <%= javascript_include_tag  'application' %>
@@ -45,7 +45,7 @@
 	    <p class="pull-right" style="margin-right:70px;">Logged in as <%= link_to current_user.name, '#' if current_user %> <%= link_to current_show.host, '#' if current_show %></p>
 	    <%= link_to "Dashboard", show_dashboard_path(current_show), :class => 'btn green pull-right', :style => 'margin-top: 5px;' if current_show %>
 	  <% else %>
-	    <p class="pull-right"><%= link_to "Sign up!", new_user_registration_path %> Sign in like goes here</p>
+	    <p class="pull-right"><%= link_to "Sign up!", new_user_registration_path, :style => 'margin-right:30px;' %> <strong style='margin-right:30px;'>or</strong> <%= link_to "Sign In", new_user_session_path, :class => 'btn green'%></p>
 	  <%end%>
         </div>
       </div>

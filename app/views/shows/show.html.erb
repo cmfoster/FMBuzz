@@ -31,12 +31,17 @@
       <div class="content">
         <!-- Main hero unit for a primary marketing message or call to action -->
         <div class="hero-unit">
-	  <h1 id="heroheader"><%= @show.name%> Radio</h1>	
-          <p style="margin-top:20px;"><%= @show.about%></p>
+	  <div id="herocontent">
+	    <h1 id="heroheader"><%= @show.name.titleize%> Radio</h1>	
+	    <p style="margin-top:20px;"><%= @show.about%></p>
 	    <p class="span6">Topic: <span class="label notice" style="font-size:17px;"><%= @show.topic%></span></p>
 	    <p>Hosted By: <span class="label warning" style="font-size:17px;"><%= @show.host%></span></p>
-<!--          <p><a class="btn primary large">Learn more &raquo;</a></p>-->
+	    <p><a class="btn primary large" id="request-btn">Request a song!</a></p>
 	  </div>
+	  <div id="request-content" style="display:none">
+      vdf
+	  </div>
+	</div>
 
 	<div class="content">
   <div class="row">
@@ -99,3 +104,16 @@
         </footer>
       </div>
     </div>
+
+<script>
+$("#request-btn").click(function () {
+  $( "#herocontent" ).hide("slide", { direction: "left" }, 700, function() {
+    $("#request-content").show("slide", { direction: "right" }, 700);
+  });
+});
+$(".submit-name").click(function () {
+  $("#setname2").hide("slide", { direction: "left" }, 700, function() {
+    $("#eventlinks").show("slide", { direction: "right" }, 700);
+  });
+});
+</script>
