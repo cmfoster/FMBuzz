@@ -12,17 +12,21 @@ class Playlist < ActiveRecord::Base
   has_attached_file :m3u
   has_many :playlistables
   has_many :songs, :through => :playlistables
-  has_many :artists
   belongs_to :show
-
   validates_presence_of :name  
-
+  
+  def artistlist
+      songs.each do |song|
+	 song.artist #this works, just need to pass it to a variable
+      end
+  end
+  
   def process
     clear_playlist if self.playlistables.any?
     if self.m3u.path.last(5) == ".xspf"
       process_xspf
     else
-      process_m3u
+      redirect_to :back
     end
   end
 
@@ -36,13 +40,15 @@ class Playlist < ActiveRecord::Base
      tracks.each do |track|
        a = Artist.find_by_name(track.search('creator').text.downcase) 
        if a 
-	self.songs.create(:artist_id => a.id, :title => track.search('title').text)
+	self.songs.create!(:artist_id => a.id, :title => track.search('title').text)
        else
-	a = self.artists.create(:name => track.search('creator').text)
-	self.songs.create(:artist_id => a.id, :title => track.search('title').text)
+	a = Artist.create!(:name => track.search('creator').text)
+	self.songs.create!(:artist_id => a.id, :title => track.search('title').text)
        end
      end
   end
+  
+  # All code below this is not used
 
   def handle_artist(artist)
     artist = artist.downcase

@@ -1,9 +1,10 @@
 class Song < ActiveRecord::Base
+#   validates_presence_of :title
+
+  belongs_to :artist
   has_many :playlistables
   has_many :playlists, :through => :playlistables
-  validates_presence_of :title
-  belongs_to :artist
-
+  
   def artist_with_title
     "#{artist.name.titleize} - #{title}"
   end

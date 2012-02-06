@@ -78,6 +78,24 @@
     line-height: 18px;
     padding: 4px;
 }
+#addplaylist {
+    display:none;
+    width:748px; 
+    height:100%;
+    margin-left: 0;
+    height: 100%;
+    background-color: #CBE86B;
+    border-radius: 2px 2px 2px 2px;
+}
+.btn-fld {
+}
+.btn-fld [type=submit] {
+    margin-top: 15px;
+    margin-left: 240px;
+}
+.txt-fld label {
+    margin-right: 10px;
+}
 </style>
 
 <div class="container-fluid">
@@ -114,10 +132,11 @@
       </div>
     </div>
     <div class="well">
-      <h5>Playlists</h5>
+      <h5><%= link_to "Add Playlist", '#', :id => 'show-playlist', :class => 'btn green'%></h5>
+      
       <ul>
 	<li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+        <li><a href="#" id="modalbtn">Link</a></li>
       </ul>
     </div>
   </div>
@@ -136,6 +155,30 @@ that he may want to talk to his audience about.
       <div class="span8" id="left-toolbox"> 
 	Any graph or analytics will go here. Anything that will help the Host do their job.
       </div>
+      <div class="span8" id="addplaylist"> 
+	<div id="container">
+	  <div class="container-i">
+	    <h3>New Playlist</h3>
+	    <%= form_for [@show, @playlist], :url => show_playlists_path, :action => :create, :html => { :multipart => true } do |f| %>
+	      <div class="txt-fld">
+		<%= f.label :name %>
+		<%= f.text_field :name, :style => 'border:1px solid black; width:195px;' %>
+		<div style="clear:both"></div>
+	      </div>
+	      <div class="txt-fld">
+		<%= f.label "nml / m3u file" %>
+		<%= f.file_field :m3u %>
+		<div style="clear:both"></div>
+	      </div>
+	      <div class="btn-fld">
+		<%= f.submit :class => 'btn submit' %>
+		<%= link_to "Cancel", '#', :class => 'btn cncl', :id => 'cancel-playlist'%>
+		<div style="clear:both"></div>
+	      </div>
+	    <% end %>
+	  </div>
+	</div>
+      </div>
       <div class="span6" id="right-toolbox">
 	Incomming Song Requests will come in here. 
       </div>
@@ -143,27 +186,20 @@ that he may want to talk to his audience about.
   </div>
 </div>
 
-<div id="container">
-  <div class="container-i">
-    <h3>New Playlist</h3>
-    <%= form_for [@show, @playlist], :url => show_playlists_path, :action => :create, :html => { :multipart => true } do |f| %>
-      <div class="txt-fld">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <div style="clear:both"></div>
-      </div>
-      <div class="txt-fld">
-        <%= f.label "nml / m3u file" %>
-        <%= f.file_field :m3u %>
-        <div style="clear:both"></div>
-      </div>
-      <div class="btn-fld">
-        <%= f.submit %>
-        <div style="clear:both"></div>
-      </div>
-    <% end %>
+<!--Modal Window-->
+ <div class="modal hide fade" >
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3 style="text-align:center;">Playlist</h3>
   </div>
-</div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary">Save changes</a>
+    <a href="#" data-dismiss="modal" class="btn close">Close</a>
+  </div>
+ </div>
 
 <script>
 $("#set-name-btn").click(function () {
@@ -175,5 +211,19 @@ $(".submit-name").click(function () {
   $("#setname2").hide("slide", { direction: "left" }, 700, function() {
     $("#eventlinks").show("slide", { direction: "right" }, 700);
   });
+});
+
+$("#show-playlist").click(function () {
+  $("#left-toolbox").hide("slide", { direction: "left" }, 700, function() {
+    $("#addplaylist").show("slide", { direction: "right" }, 700);
+  });
+});
+$("#cancel-playlist").click(function () {
+  $("#addplaylist").hide("slide", { direction: "left" }, 700, function() {
+    $("#left-toolbox").show("slide", { direction: "right" }, 700);
+  });
+});
+$('#modalbtn').click(function () {
+$('.modal').modal({backdrop: true})
 });
 </script>
