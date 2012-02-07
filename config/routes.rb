@@ -14,6 +14,9 @@ FMBuzz::Application.routes.draw do
     resources :messages
     get :vote
     get :dashboard
+    get :modalplaylist
+    get :songlist
+
   end
   
   resources :playlists, :only => [:show]

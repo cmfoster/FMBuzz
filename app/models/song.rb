@@ -4,6 +4,8 @@ class Song < ActiveRecord::Base
   belongs_to :artist
   has_many :playlistables
   has_many :playlists, :through => :playlistables
+  validates_presence_of :title
+  validates_uniqueness_of :title
   
   def artist_with_title
     "#{artist.name.titleize} - #{title}"

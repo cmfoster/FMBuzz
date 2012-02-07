@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-  respond_to :html, :js
+  respond_to :js, :html
   before_filter :authenticate_show!, :only => [:edit,:dashboard]
   
   def show
@@ -23,11 +23,28 @@ class ShowsController < ApplicationController
   end
   
   def dashboard
-    @show = current_show
+    @show = Show.find_by_id(current_show.id)
     @playlist = @show.playlists.build
     @city = Location.find_by_city(params[:city])
     @locations = Location.all
     @messages = current_show.messages(:order => 'created_at DESC')
+    @playlists = @show.playlists
+  end
+  
+    
+  def modalplaylist
+    @playlist = Playlist.find(params[:id])
+    respond_with @playlist
+  end
+  
+  def songlist
+    @playlist = Playlist.find_by_id(params[:playlist_id])
+    @artist = Artist.find_by_id(params[:artist_id])
+    @artistsongs = Array.new
+    @artist.songs.each do |song|
+      @artistsongs << song unless @playlist.songs.where('id = ?', song.id) == false
+    end
+    respond_with @artistsongs
   end
   
   def edit

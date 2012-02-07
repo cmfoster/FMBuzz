@@ -13,13 +13,9 @@ class Playlist < ActiveRecord::Base
   has_many :playlistables
   has_many :songs, :through => :playlistables
   belongs_to :show
-  validates_presence_of :name  
+  validates_presence_of :name 
+  validates_uniqueness_of :name
   
-  def artistlist
-      songs.each do |song|
-	 song.artist #this works, just need to pass it to a variable
-      end
-  end
   
   def process
     clear_playlist if self.playlistables.any?
@@ -46,6 +42,7 @@ class Playlist < ActiveRecord::Base
 	self.songs.create!(:artist_id => a.id, :title => track.search('title').text)
        end
      end
+     self.save!
   end
   
   # All code below this is not used

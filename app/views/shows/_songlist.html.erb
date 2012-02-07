@@ -1,0 +1,6 @@
+<h5 style="text-align:center"><%=@artist.name%></h5>
+<ul class="unstyled">
+  <% @artistsongs.each do |song|%>
+    <li><%= song.title %></li>
+  <% end %>
+</ul>

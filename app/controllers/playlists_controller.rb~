@@ -5,8 +5,15 @@ class PlaylistsController < ApplicationController
     @playlist.process
     
     respond_to do |format|
-      format.html { redirect_to edit_dj_playlist_path(current_disk_jockey, @playlist) }
+      format.html { redirect_to show_dashboard_path(current_show, @playlist) }
     end
   end
   
+  def show
+
+  end
+  
+  def modal_display
+    
+  end
 end
