@@ -1,3 +1,10 @@
+<style>
+.span4 {
+  height: 300px;
+  overflow:auto;
+/*  border:1px solid black*/
+}
+</style>
 <!--Modal Window-->
 <div class="modal-header">
   <a class="close" data-dismiss="modal">×</a>
@@ -5,14 +12,14 @@
 </div>
 <div class="modal-body">
   <div class="row" style="padding-left:40px;">
-    <div class="span4" style="border:1px solid black">
+    <div class="span4">
       <ul class="unstyled">
-	<% @playlist.songs.each do |song| %>
-	  <li><%= link_to song.artist.name, show_songlist_path(:playlist_id => @playlist.id, :artist_id => song.artist.id), :remote => true %></li>
+	<% @playlist.artists.each do |artist| %>
+	  <li><%= link_to artist.name, show_songlist_path(:playlist_id => @playlist.id, :artist_id => artist.id), :remote => true %></li>
 	<% end %>
       </ul>
     </div>
-    <div class="span4" id="songlist" style="border:1px solid black">
+    <div class="span4" id="songlist">
     </div>
   </div>
 </div>

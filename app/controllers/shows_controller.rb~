@@ -23,7 +23,7 @@ class ShowsController < ApplicationController
   end
   
   def dashboard
-    @show = Show.find_by_id(current_show.id)
+    @show = Show.find_by_id(params[:show_id])
     @playlist = @show.playlists.build
     @city = Location.find_by_city(params[:city])
     @locations = Location.all
@@ -42,7 +42,7 @@ class ShowsController < ApplicationController
     @artist = Artist.find_by_id(params[:artist_id])
     @artistsongs = Array.new
     @artist.songs.each do |song|
-      @artistsongs << song unless @playlist.songs.where('id = ?', song.id) == false && @artistsongs.where('title = ?', song.title) == true
+      @artistsongs << song unless @playlist.songs.where('id = ?', song.id) == false
     end
     respond_with @artistsongs
   end

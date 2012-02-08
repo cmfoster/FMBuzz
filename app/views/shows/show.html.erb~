@@ -30,7 +30,7 @@
       </div>
       <div class="content">
         <!-- Main hero unit for a primary marketing message or call to action -->
-        <div class="hero-unit">
+        <div class="hero-unit" style="height:238px; padding-top:10px;">
 	  <div id="herocontent">
 	    <h1 id="heroheader"><%= @show.name.titleize%> Radio</h1>	
 	    <p style="margin-top:20px;"><%= @show.about%></p>
@@ -38,8 +38,19 @@
 	    <p>Hosted By: <span class="label warning" style="font-size:17px;"><%= @show.host%></span></p>
 	    <p><a class="btn primary large" id="request-btn">Request a song!</a></p>
 	  </div>
-	  <div id="request-content" style="display:none">
-      
+	  <div id="request-content" style="display:none;">
+	    <h3 class="heroheader" style="text-align:center">All available songs</h3>
+	    <div class="row" style="margin-top:10px;">
+	      <div class="span6" style="height:235px;overflow:auto;">
+		<ul class="unstyled">
+		  <% @show.playlist_artists.uniq.each do |artist| %>
+		    <li><%= link_to artist.name, '#'%></li>
+		  <% end %>
+		</ul>
+	      </div>
+	      <div class="span8 offset3" style="border:1px solid black;overflow:auto;">
+	      </div>
+	    </div>
 	  </div>
 	</div>
 
@@ -108,7 +119,7 @@
 <script>
 $("#request-btn").click(function () {
   $( "#herocontent" ).hide("slide", { direction: "left" }, 700, function() {
-    $("#setname2").show("slide", { direction: "right" }, 700);
+    $("#request-content").show("slide", { direction: "right" }, 700);
   });
 });
 $(".submit-name").click(function () {

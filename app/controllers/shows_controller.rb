@@ -23,7 +23,7 @@ class ShowsController < ApplicationController
   end
   
   def dashboard
-    @show = Show.find_by_id(current_show.id)
+    @show = Show.find_by_id(params[:show_id])
     @playlist = @show.playlists.build
     @city = Location.find_by_city(params[:city])
     @locations = Location.all

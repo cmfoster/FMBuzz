@@ -25,6 +25,14 @@ class Playlist < ActiveRecord::Base
       redirect_to :back
     end
   end
+  
+  def artists
+    artists = Array.new
+    self.songs.each do |song|
+      artists << song.artist.clone
+    end
+    return artists.sort!{|a1,a2| a1.name<=>a2.name}
+  end
 
   #handle_asynchronously :process #Keep this, processing .nml files takes 5+ seconds.
 
