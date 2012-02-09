@@ -38,13 +38,23 @@ class ShowsController < ApplicationController
   end
   
   def songlist
-    @playlist = Playlist.find_by_id(params[:playlist_id])
-    @artist = Artist.find_by_id(params[:artist_id])
-    @artistsongs = Array.new
-    @artist.songs.each do |song|
-      @artistsongs << song unless @playlist.songs.where('id = ?', song.id) == false
+    if current_show && request.referer.scan('dashboard').size == 1
+      @playlist = Playlist.find_by_id(params[:playlist_id])
+      @artist = Artist.find_by_id(params[:artist_id])
+      @artistsongs = Array.new
+      @artist.songs.each do |song|
+	@artistsongs << song unless @playlist.songs.where('id = ?', song.id) == false
+      end
+    else
+      show = Show.find_by_id(params[:show_id])
+      allsongs = show.playlist_songs
+      @artist = Artist.find_by_id(params[:artist_id])
+      @artistsongs = Array.new
+      artist.songs.each do |song|
+	@artistsongs << song if allsongs.find{|s| s.id == song.id}
+      end
     end
-    respond_with @artistsongs
+      respond_with @artistsongs
   end
   
   def edit

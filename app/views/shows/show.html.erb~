@@ -39,16 +39,17 @@
 	    <p><a class="btn primary large" id="request-btn">Request a song!</a></p>
 	  </div>
 	  <div id="request-content" style="display:none;">
-	    <h3 class="heroheader" style="text-align:center">All available songs</h3>
+	    <h3 class="heroheader" style="text-align:center">All available songs <%= link_to "Cancel", '#', :class => 'btn cancel pull-right', :id => 'requestcancel' %></h3>
 	    <div class="row" style="margin-top:10px;">
 	      <div class="span6" style="height:235px;overflow:auto;">
 		<ul class="unstyled">
-		  <% @show.playlist_artists.uniq.each do |artist| %>
-		    <li><%= link_to artist.name, '#'%></li>
+		  <% @show.playlist_artists.uniq.sort!{|a1, a2| a1.name<=>a2.name}.each do |artist| %>
+		    <li><%= link_to artist.name, show_songlist_path(:artist_id => artist.id, :show_id => @show.id), :remote => true%></li>
 		  <% end %>
 		</ul>
 	      </div>
-	      <div class="span8 offset3" style="border:1px solid black;overflow:auto;">
+	      <div class="span8 offset3" id="songlist" style="border:1px solid black;overflow:auto;">
+		<!--Selected Artists Songs visible here-->
 	      </div>
 	    </div>
 	  </div>
@@ -120,6 +121,11 @@
 $("#request-btn").click(function () {
   $( "#herocontent" ).hide("slide", { direction: "left" }, 700, function() {
     $("#request-content").show("slide", { direction: "right" }, 700);
+  });
+});
+$("#requestcancel").click(function () {
+  $( "#request-content" ).hide("slide", { direction: "left" }, 700, function() {
+    $("#herocontent").show("slide", { direction: "right" }, 700);
   });
 });
 $(".submit-name").click(function () {
