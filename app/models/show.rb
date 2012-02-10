@@ -9,6 +9,7 @@ class Show < ActiveRecord::Base
   has_many :playlists
   has_many :messages
   has_many :questions
+  has_many :song_requests
   belongs_to :location
   
   def playlist_songs

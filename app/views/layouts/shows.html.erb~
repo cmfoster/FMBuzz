@@ -19,7 +19,30 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+  $(function() {
+    $('#flash').delay(500).fadeIn('normal', function() {
+	$(this).delay(2500).fadeOut('slow');
+    });
+  });
 </script>
+
+<style>
+  #flash {
+    position:absolute;
+    font-weight: 900;
+    font-size: 18px;
+    z-index:1;
+    padding: 5px;
+    color:#FFF;
+    background-color: green;
+    text-align:center;
+    margin:0 auto;
+    top: 40px;
+    width: 100%;
+    opacity: .8;
+}
+</style> 
+
     <div class="topbar" >
       <div class="topbar-inner">
         <div class="container-fluid">
@@ -43,7 +66,7 @@
 	    </li>
           </ul>
 	  <% if current_user || current_show %>
-	    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete , :class => 'btn red pull-right', :style => 'margin-top: 15px;'%>
+	    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete , :class => 'btn red pull-right', :style => 'margin-top: 5px;'%>
 	    <p class="pull-right" style="margin-right:70px;">Logged in as <%= link_to current_user.name, '#' if current_user %> <%= link_to current_show.host, '#' if current_show %></p>
 	    <%= link_to "Dashboard", show_dashboard_path(current_show), :class => 'btn green pull-right', :style => 'margin-top: 5px;' if current_show %>
 	  <% else %>
@@ -52,8 +75,13 @@
         </div>
       </div>
     </div>
+    <%= "<p id='flash' style='display:none;'>#{flash[:notice]}</p>".html_safe if flash[:notice]%>
 </head>
 <body style="padding-top: 60px;">
-<%= yield %>
+  <%= yield %>
 </body>
+
+    <footer>
+      <p>&copy; FMBuzz! 2012</p>
+    </footer>
 </html>

@@ -15,7 +15,7 @@ class Show < ActiveRecord::Base
     songs = []
     self.playlists.each do |playlist|
       playlist.songs.uniq.each do|song|
-	songs << [song.clone]
+	songs << song.clone
       end
     end
     return songs

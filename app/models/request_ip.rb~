@@ -1,0 +1,2 @@
+class RequestIp < ActiveRecord::Base
+end

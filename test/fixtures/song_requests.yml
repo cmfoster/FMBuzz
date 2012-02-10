@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  song_id: 1
+  user_id: 1
+  show_id: 1
+  hitcount: 1
+
+two:
+  song_id: 1
+  user_id: 1
+  show_id: 1
+  hitcount: 1

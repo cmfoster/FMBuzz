@@ -9,7 +9,7 @@
   <h5 style="text-align:center"><%=@artist.name.truncate(34)%></h5>
   <ul class="unstyled"> <!--figure out sorting for songs-->
     <% @artistsongs.sort!{|a1,a2| a1.title.downcase<=>a2.title.downcase}.each do |song|%>
-      <li><%= link_to song.title, '#' %></li>
+      <li><%= link_to song.title, song_requests_path(:song_request => {:song_id => song.id, :show_id => @show.id}), :method => :post, :confirm => "Confirm Request?" %></li>
     <% end %>
   </ul>
 <% end %>

@@ -15,9 +15,9 @@ FMBuzz::Application.routes.draw do
     get :vote
     get :dashboard
     get :modalplaylist
-
+    get :songlist
   end
-  
+  resources :song_requests, :only => [:create]
   resources :playlists, :only => [:show]
   match '/city' => 'home#cityindex'
   

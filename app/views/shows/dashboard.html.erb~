@@ -184,37 +184,46 @@ that he may want to talk to his audience about.
 	</div>
       </div>
       <div class="span6" id="right-toolbox">
-	Incomming Song Requests will come in here. 
+<!--Redo the request system-->
+	<% @requests.group('song_id').each do |request| %>
+	  <p><%= "#{@requests.find(:all, :conditions => ['song_id = ?', request.song_id]).count} #{request.song.title}" %></p>
+	<% end %>
       </div>
     </div>
   </div>
 </div>
 <!--Modal Window-->
- <div class="modal hide fade backdrop" style="display: none;" >
+ <div class="modal hide fade" style="display: none;" >
  </div>
 
 
 
 <script>
-$("#set-name-btn").click(function () {
-  $( "#eventlinks" ).hide("slide", { direction: "left" }, 700, function() {
-    $("#setname2").show("slide", { direction: "right" }, 700);
+  $("#set-name-btn").click(function () {
+    $( "#eventlinks" ).hide("slide", { direction: "left" }, 700, function() {
+      $("#setname2").show("slide", { direction: "right" }, 700);
+    });
   });
-});
-$(".submit-name").click(function () {
-  $("#setname2").hide("slide", { direction: "left" }, 700, function() {
-    $("#eventlinks").show("slide", { direction: "right" }, 700);
+  $(".submit-name").click(function () {
+    $("#setname2").hide("slide", { direction: "left" }, 700, function() {
+      $("#eventlinks").show("slide", { direction: "right" }, 700);
+    });
   });
-});
 
-$("#show-playlist").click(function () {
-  $("#left-toolbox").hide("slide", { direction: "left" }, 700, function() {
-    $("#addplaylist").show("slide", { direction: "right" }, 700);
+  $("#show-playlist").click(function () {
+    $("#left-toolbox").hide("slide", { direction: "left" }, 700, function() {
+      $("#addplaylist").show("slide", { direction: "right" }, 700);
+    });
   });
-});
-$("#cancel-playlist").click(function () {
-  $("#addplaylist").hide("slide", { direction: "left" }, 700, function() {
-    $("#left-toolbox").show("slide", { direction: "right" }, 700);
+  $("#cancel-playlist").click(function () {
+    $("#addplaylist").hide("slide", { direction: "left" }, 700, function() {
+      $("#left-toolbox").show("slide", { direction: "right" }, 700);
+    });
   });
-});
+  $(document).ready(
+    function(){
+      setInterval(function(){
+	$('#right-toolbox').load('<%= escape_javascript(show_requests_path) %>');
+      }, 3000);
+    });
 </script>

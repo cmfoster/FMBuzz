@@ -1,6 +1,6 @@
 class ShowsController < ApplicationController
   respond_to :js, :html
-  before_filter :authenticate_show!, :only => [:edit,:dashboard]
+  before_filter :authenticate_show!, :only => [:edit,:dashboard, :requests]
   
   def show
       @show = Show.find(params[:id])
@@ -46,8 +46,8 @@ class ShowsController < ApplicationController
 	@artistsongs << song unless @playlist.songs.where('id = ?', song.id) == false
       end
     else
-      show = Show.find_by_id(params[:show_id])
-      allsongs = show.playlist_songs
+      @show = Show.find_by_id(params[:show_id])
+      allsongs = @show.playlist_songs
       @artist = Artist.find_by_id(params[:artist_id])
       @artistsongs = Array.new
       @artist.songs.each do |song|
@@ -55,6 +55,10 @@ class ShowsController < ApplicationController
       end
     end
       respond_with @artistsongs
+  end
+  
+  def requests
+
   end
   
   def edit

@@ -14,8 +14,8 @@
   <div class="row" style="padding-left:40px;">
     <div class="span4">
       <ul class="unstyled">
-	<% @playlist.artists.each do |artist| %>
-	  <li><%= link_to artist.name, show_songlist_path(:playlist_id => @playlist.id, :artist_id => artist.id), :remote => true %></li>
+	<% @playlist.artists.uniq.each do |artist| %>
+	  <li><%= link_to artist.name, show_songlist_path(:playlist_id => @playlist.id, :artist_id => artist.id, :paramss => {:hi => 'hi', :bye => 'bye'}), :remote => true %></li>
 	<% end %>
       </ul>
     </div>

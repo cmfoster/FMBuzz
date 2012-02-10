@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120204034035) do
+ActiveRecord::Schema.define(:version => 20120210075901) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -59,6 +59,13 @@ ActiveRecord::Schema.define(:version => 20120204034035) do
     t.datetime "updated_at"
   end
 
+  create_table "request_ips", :force => true do |t|
+    t.string   "ip"
+    t.integer  "song_request_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "shows", :force => true do |t|
     t.string   "name"
     t.datetime "start_time"
@@ -85,6 +92,15 @@ ActiveRecord::Schema.define(:version => 20120204034035) do
 
   add_index "shows", ["email"], :name => "index_shows_on_email", :unique => true
   add_index "shows", ["reset_password_token"], :name => "index_shows_on_reset_password_token", :unique => true
+
+  create_table "song_requests", :force => true do |t|
+    t.integer  "song_id"
+    t.integer  "user_id"
+    t.integer  "show_id"
+    t.integer  "hitcount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "songs", :force => true do |t|
     t.integer  "artist_id"

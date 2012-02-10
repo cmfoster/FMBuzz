@@ -4,6 +4,7 @@ class Song < ActiveRecord::Base
   belongs_to :artist
   has_many :playlistables
   has_many :playlists, :through => :playlistables
+  has_one :song_request
   validates_presence_of :title
   validates_uniqueness_of :title
   

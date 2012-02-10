@@ -1,6 +1,6 @@
 class ShowsController < ApplicationController
   respond_to :js, :html
-  before_filter :authenticate_show!, :only => [:edit,:dashboard]
+  before_filter :authenticate_show!, :only => [:edit,:dashboard, :requests]
   
   def show
       @show = Show.find(params[:id])
@@ -29,6 +29,7 @@ class ShowsController < ApplicationController
     @locations = Location.all
     @messages = current_show.messages(:order => 'created_at DESC')
     @playlists = @show.playlists
+    @requests = @show.current_requests
   end
   
     
@@ -46,15 +47,21 @@ class ShowsController < ApplicationController
 	@artistsongs << song unless @playlist.songs.where('id = ?', song.id) == false
       end
     else
-      show = Show.find_by_id(params[:show_id])
-      allsongs = show.playlist_songs
+      @show = Show.find_by_id(params[:show_id])
+      allsongs = @show.playlist_songs
       @artist = Artist.find_by_id(params[:artist_id])
       @artistsongs = Array.new
-      artist.songs.each do |song|
+      @artist.songs.each do |song|
 	@artistsongs << song if allsongs.find{|s| s.id == song.id}
       end
     end
       respond_with @artistsongs
+  end
+  
+  def requests
+    show = current_show
+    @requests = show.current_requests
+     
   end
   
   def edit
