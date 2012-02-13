@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!DOCTYPE html>
+  <script src="http://js.pusher.com/1.11/pusher.min.js" type="text/javascript"></script>
 <!--  <link rel="shortcut icon" href="/images/favicon.ico" />-->
   <title><%= @city.city if @city%> Radio</title>
   <%= stylesheet_link_tag 'application', 'home' %>
@@ -23,6 +25,22 @@
     $('#flash').delay(500).fadeIn('normal', function() {
 	$(this).delay(2500).fadeOut('slow');
     });
+  });
+
+// Pusher Script
+
+  // Enable pusher logging - don't include this in production
+  Pusher.log = function(message) {
+    if (window.console && window.console.log) window.console.log(message);
+  };
+
+  // Flash fallback logging - don't include this in production
+  WEB_SOCKET_DEBUG = true;
+
+  var pusher = new Pusher('62a5f8cac08e73f79ff5');
+  var channel = pusher.subscribe('test_channel');
+  channel.bind('my_event', function(data) {
+    alert(data);
   });
 </script>
 
@@ -80,8 +98,4 @@
 <body style="padding-top: 60px;">
   <%= yield %>
 </body>
-
-    <footer>
-      <p>&copy; FMBuzz! 2012</p>
-    </footer>
 </html>

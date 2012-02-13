@@ -1,3 +1,31 @@
-<% @messages.each do |message|%>
-  <%= "<p style='margin-left:10px;'><strong>#{message.author}</strong> <i>says</i> <strong>#{message.msg}</strong></p>".html_safe %>
+<style>
+#new_message {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+#new_message [type = submit] {
+  width: 70px;
+}
+#message_msg {
+  width: 600px;
+  margin-right: 50px;
+}
+#chatwall {
+/*  border: 1px solid black;*/
+  height: 330px;
+  width: 735px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  
+}
+</style>
+
+<div id="chatwall">
+</div>
+
+<%= form_for([@show, @message], :remote => true) do |f|%>
+  <%= f.text_field :msg %>
+  <%= f.hidden_field :show_id, :value => @show.id %>
+  <%= f.hidden_field :author, :value => current_show.name %>
+  <%= f.submit "send"%>
 <% end %>

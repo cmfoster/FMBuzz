@@ -3,12 +3,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(params[:message])
-    @message.show_id = params[:show_id]
-    if @message.save!
-      respond_with @message
-    else
-      redirect_to root_path
-    end
+    @show = Show.find_by_id(params[:show_id])
   end
   
   def destroy

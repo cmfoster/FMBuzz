@@ -1,0 +1,5 @@
+<ul class="unstyled">
+  <% @requests.sort!{|r1, r2| r2.request_ips.size<=>r1.request_ips.size}.each do |request| %>
+    <%= "<li> #{request.request_ips.size} #{request.song.title.truncate(40)} </li>".html_safe %>
+  <% end %>
+</ul>

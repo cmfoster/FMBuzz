@@ -1,4 +1,5 @@
-<p style="font-size:14px;">
-  <%= "<strong>#{message.author}: </strong> #{message.msg}".html_safe%>
-</p>
-
+<% if current_show && @show.id == current_show.id %>
+  <p class='chat-message'><%= "<span class='show-name'>#{message.author}(<span class='host-name'>#{@show.host}</span>): </span> #{message.msg}".html_safe%></p>
+<% else %>
+  <p style="font-size:14px;"><%= "<strong>#{message.author}: </strong> #{message.msg}".html_safe%></p>
+<% end %>

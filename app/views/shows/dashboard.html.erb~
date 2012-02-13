@@ -26,7 +26,6 @@
     padding-left: 0px;
     width: 748px;
     height: 100%;
-    overflow: auto;
 }
 
 .span6#data {
@@ -100,7 +99,24 @@
     width: 600px;
     height: 500px;
 }
+
+/*The message format for chat ---------------------------*/
+p.chat-message {
+  font-size:14px;
+  background-color: yellow;
+}
+.show-name {
+  background-color: yellow;
+  font-weight: 900;
+}
+.host-name {
+  color: orange;
+}
+.chat-message {
+}
 </style>
+<%= subscribe_to "/show/chats"%>
+
 
 <div class="container-fluid">
   <div class="sidebar">
@@ -147,7 +163,7 @@
   <div class="row" id="tools">
     <div class="span8" id="chatbox">
       <h2 style="text-align:center"> <%="#{current_show.name}'s Social Chat"%></h2>
-      <hr style="margin-top:0;"/>
+      <hr style="margin-top:0; margin-bottom:5px;"/>
       <%= render :partial => 'showchatdiv'%>
     </div>
   <div class="span6" id="data">
@@ -184,10 +200,8 @@ that he may want to talk to his audience about.
 	</div>
       </div>
       <div class="span6" id="right-toolbox">
-<!--Redo the request system-->
-	<% @requests.group('song_id').each do |request| %>
-	  <p><%= "#{@requests.find(:all, :conditions => ['song_id = ?', request.song_id]).count} #{request.song.title}" %></p>
-	<% end %>
+	<!-- Show Requests Here-->
+	<%= render :partial => 'partials/requestupdate'%>
       </div>
     </div>
   </div>
@@ -224,6 +238,6 @@ that he may want to talk to his audience about.
     function(){
       setInterval(function(){
 	$('#right-toolbox').load('<%= escape_javascript(show_requests_path) %>');
-      }, 3000);
+      }, 60000);
     });
 </script>

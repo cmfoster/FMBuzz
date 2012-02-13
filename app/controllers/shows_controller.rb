@@ -9,6 +9,7 @@ class ShowsController < ApplicationController
       @locations = Location.all
       @city = Location.find_by_city(params[:city])
       @questions = @show.toporder #def in showmodel
+      @question = @show.questions.build
   end
   
   def vote
@@ -27,8 +28,10 @@ class ShowsController < ApplicationController
     @playlist = @show.playlists.build
     @city = Location.find_by_city(params[:city])
     @locations = Location.all
-    @messages = current_show.messages(:order => 'created_at DESC')
+    @messages = @show.messages(:order => 'created_at DESC')
     @playlists = @show.playlists
+    @requests = @show.song_requests.where('created_at BETWEEN ? AND ?', current_show.start_time ,current_show.end_time)
+    @message = @show.messages.build
   end
   
     
@@ -58,7 +61,9 @@ class ShowsController < ApplicationController
   end
   
   def requests
-
+#     This has to be changed later, temporary.
+    @requests = current_show.song_requests.where('created_at BETWEEN ? AND ?', current_show.start_time ,current_show.end_time)
+    render :partial => 'partials/requestupdate'
   end
   
   def edit

@@ -12,6 +12,7 @@ FMBuzz::Application.routes.draw do
   resources :shows do
     resources :playlists
     resources :messages
+    resources :questions
     get :requests
     get :vote
     get :dashboard
