@@ -12,6 +12,7 @@ class ShowsController < ApplicationController
       @question = @show.questions.build
   end
   
+#   Question Vote
   def vote
     @show = Show.find(params[:show_id])
     if params[:question]

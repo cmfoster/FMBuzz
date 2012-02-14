@@ -1,0 +1,8 @@
+class QuestionsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:create]
+  respond_to :js, :html
+  def create
+    @question = Question.create(params[:question])
+    respond_with @question
+  end
+end

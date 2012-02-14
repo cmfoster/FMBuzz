@@ -9,6 +9,7 @@ class ShowsController < ApplicationController
       @locations = Location.all
       @city = Location.find_by_city(params[:city])
       @questions = @show.toporder #def in showmodel
+      @question = @show.questions.build
   end
   
   def vote
