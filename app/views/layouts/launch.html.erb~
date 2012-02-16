@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Alchemy Under Construction Template</title>
+<%= stylesheet_link_tag 'application' %>
+<%= javascript_include_tag 'application' %>
+<link href='http://fonts.googleapis.com/css?family=Lato:regular,regularitalic,900' rel='stylesheet' type='text/css' />
+<script type="text/javascript">
+	$(document).ready(function(){
+		//Setting trigger, content and dimensions of contact box overlay
+		$(".contactusicon").colorbox({width:"600px", height:"580px", initialWidth:"600px", initialHeight:"580px", speed:"2000", inline:true, href:"#contactus"});
+	});
+</script>
+<script type="text/javascript">
+//<![CDATA[
+    var secondsStr = "29217390";
+//]]>
+</script>
+</head>
+
+<body class="red">
+<%=yield%>
+</body>
+</html>

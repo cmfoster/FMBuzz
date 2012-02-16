@@ -12,6 +12,11 @@ class HomeController < ApplicationController
     @locations = Location.all #dropbox topbar
     @city = Location.find_by_city(params[:city]) # fill page with city specific content
     @shows = @city.shows #shows are the broadcasting accounts
-    
   end 
+  
+#   Set as root route for launch page
+  def launch
+    render :layout => 'launch'
+    @result = request.location
+  end
 end

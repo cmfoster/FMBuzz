@@ -2,10 +2,12 @@ FMBuzz::Application.routes.draw do
  
   devise_for :shows
   devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
-    root :to => 'home#index'
+    root :to => 'home#launch' #   Set this to root again when ready to launch
   end
+  
+  resources :subscribers, :only => [:create]
 
-  root :to => 'home#index'
+  #   root :to => 'home#index'
   
   resources :users
   

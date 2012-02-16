@@ -1,0 +1,130 @@
+/* THEME CONTROL */
+html {background: none; height: 100%; margin: 0;}
+body {background: #0077aa url(launch-images/page_bg.png) repeat-x top; height: 100%; font-family: Arial, Helvetica, sans-serif; color: #fff; width: 100%; margin: 0; padding: 0}
+#page {width: 980px; margin: 0px auto; font-family: Arial, Helvetica, sans-serif; font-size: 12px; position: relative; }
+.bubble {z-index: 1001;}
+
+/* DIFFERENT COLOUR VERSIONS */
+body.darkgreen {background: #85aa00 url(launch-images/page_bg_darkgreen.png);}
+body.darkred {background: #aa0003 url(launch-images/page_bg_darkred.png);}
+body.gray {background: #555 url(launch-images/page_bg_gray.png);}
+body.green {background: #06aa00 url(launch-images/page_bg_green.png);}
+body.lightgreen {background: #00aa87 url(launch-images/page_bg_lightgreen.png);}
+body.navyblue {background: #2d00aa url(launch-images/page_bg_navyblue.png);}
+body.orange {background: #aa7d00 url(launch-images/page_bg_orange.png);}
+body.pink {background: #aa0060 url(launch-images/page_bg_pink.png);}
+body.purple {background: #8200aa url(launch-images/page_bg_purple.png);}
+body.red {background: #aa3600 url(launch-images/page_bg_red.png);}
+body.yellow {background: #a9aa00 url(launch-images/page_bg_yellow.png);}
+
+#page a {color: #fff;}
+#page a:hover {text-decoration: none;}
+
+#logo {width: 980px; height: 250px; text-align:center;}
+#logo img {margin: 0 auto;}
+#sideleft {width:470px; height: 380px; float: left; background: url(launch-images/tubes.png) no-repeat top;}
+#sideright { width: 470px; height: 380px; float: right;}
+#middle { width: 40px; float: left; padding: 223px 0 0 0; height: 157px; }
+#progress {width: 109px; height: 36px; margin: 195px 0 0 200px;}
+.topsection {clear: both; overflow: hidden; height: 380px}
+
+/* COUNTDOWN LAYOUT CONTROL */
+#countdown {background: none no-repeat left; width: 470px; height: 24px; margin: 0 auto 50px; padding: 93px 0 0 28px;}
+#countdown div {float: left; width: 40px;}
+
+#countdown div.days {width: 60px; margin: 0 34px 0 20px;}
+#countdown div.hours {margin: 0 40px 0 0px;}
+#countdown div.minutes {margin: 0 33px 0 0;}
+#countdown div.seconds {margin: 0;}
+
+#countdown div div {float: left; height: 24px; background: url(launch-images/digits.png) no-repeat 0px 0px;}
+#countdown div.image0 {background-position: -0px 0px; width: 20px;}
+#countdown div.image1 {background-position: -20px 0px; width: 20px;}
+#countdown div.image2 {background-position: -40px 0px; width: 20px;}
+#countdown div.image3 {background-position: -60px 0px; width: 20px;}
+#countdown div.image4 {background-position: -80px 0px; width: 20px;}
+#countdown div.image5 {background-position: -100px 0px; width: 20px;}
+#countdown div.image6 {background-position: -120px 0px; width: 20px;}
+#countdown div.image7 {background-position: -140px 0px; width: 20px;}
+#countdown div.image8 {background-position: -160px 0px; width: 20px;}
+#countdown div.image9 {background-position: -180px 0px; width: 20px;}
+
+/* PAGE CONTENT CLASSES */
+#content { height: 215px;}
+#content h1 {font-size: 30px; font-family: "Arial Black", Arial, Helvetica, sans-serif; margin: 0 0 20px 0; padding: 0;}
+#content p {font-size: 12px; line-height: 2em }
+
+#tweet {display:none;background: url(launch-images/ico_tweet.png) no-repeat left top;padding: 0 0 0 50px; min-height: 40px; font-size: 12px;}
+#tweet span {width: 100%; display: block; color: #fff; font-size: 11px; font-style: italic; margin: 0 0 5px 0}
+
+/* FOOTER */
+#footer {padding: 40px 0 0 0; clear: both; background: url(launch-images/dot.png) top repeat-x;clear: both; overflow: hidden; margin: 80px 0 60px 0; position: relative; overflow: visible;}
+#footer .address {float: left; margin: 5px 0 0 0;}
+#footer .address li {float: left; margin: 0 20px 0 0; padding: 0 0 0 20px}
+#footer .address li:last-child {margin: 0}
+#footer .address li.email { background: url(launch-images/ico_email.png) no-repeat left;}
+#footer .address li.phone { background: url(launch-images/ico_phone.png) no-repeat left;}
+#footer .address li.web { background: url(launch-images/ico_web.png) no-repeat left;}
+#footer .address li a {padding:4px 10px; background: #000; text-decoration: none; color: #fff}
+#footer .address li a:hover { background: #fff; color: #000;}
+
+/* FOOTER SOCIAL ICONS */
+.social {float: right; height: 25px; display: block; width: 400px; display: block;}
+.social li a {float: right; width: 25px; height: 25px; margin: 0 10px 0px 0; background: url(launch-images/social_icons.png) no-repeat top left; position: relative; text-decoration: none;}
+.social li:first-child a {margin: 0}
+
+.social li.facebook a {background-position: 0 0;}
+.social li.twitter a {background-position: -25px 0;}
+.social li.linkedin a {background-position: -50px 0;}
+.social li.youtube a {background-position: -75px 0;}
+.social li.google a {background-position: -100px 0;}
+.social li.vimeo a {background-position: -125px 0;}
+.social li.flickr a {background-position: -150px 0;}
+.social li.myspace a {background-position: -175px 0;}
+.social li.rss a {background-position: -200px 0;}
+.social li.facebook a:hover {background-position: 0 -25px;}
+.social li.twitter a:hover {background-position: -25px -25px;}
+.social li.linkedin a:hover {background-position: -50px -25px;}
+.social li.youtube a:hover {background-position: -75px -25px;}
+.social li.google a:hover {background-position: -100px -25px;}
+.social li.vimeo a:hover {background-position: -125px -25px;}
+.social li.flickr a:hover {background-position: -150px -25px;}
+.social li.myspace a:hover {background-position: -175px -25px;}
+.social li.rss a:hover {background-position: -200px -25px;}
+
+/* JQUERY TOOLTIP */
+.toolTipWrapper {width:109px;height:25px;background:url(launch-images/tooltip.png) no-repeat;font-size:11px;color:#fff;text-align:center;font-family:"Arial",Helvetica,sans-serif;padding:3px 0 0 0;position:absolute;top:-35px;left:95px;display:none;color:#FFF;font-weight:normal; z-index: 10000}
+
+/* USER SUBSCRIBE SIGNUP */
+#newsletter {margin: 0 auto 40px; height: 50px;}
+#newsletter input.idleField {float: left; width: 410px; height: 50px; font-family: 'Georgia', Times New Roman, Helvetica, sans-serif; font-weight: bold; font-size: 21px; letter-spacing: -0.5px; color: #4b4b4b; text-align: center; border: none; -moz-border-radius: 5px 5px 5px 5px; background: url(launch-images/input_text.png) no-repeat top left; background-position: 0 -50px; margin: 10px 10px 0 0; vertical-align: top; outline: none; text-align: center; }
+#newsletter input.focusField {float: left; width: 410px; height: 50px; font-family: 'Georgia', Times New Roman, Helvetica, sans-serif; font-weight: bold; font-size: 21px; letter-spacing: -0.5px; color: #4b4b4b; text-align: center; border: none; -moz-border-radius: 5px 5px 5px 5px; background: url(launch-images/input_text.png) no-repeat top left; background-position: 0 0px; margin: 10px 10px 0 0; vertical-align: top; outline: none; text-align: center; }
+
+#newsletter input.submit {width: 50px; height: 50px; border: none; cursor: pointer; background: url(launch-images/signup.png) no-repeat top; margin-top: 70px;}
+#newsletter input.submit:hover {background-position: 0 -50px;}
+#feedback {height:20px;	display: block; width: 40px;}
+#feedback .info {width: 40px; height: 30px; text-align: center;}
+
+/* LOADING BARS WHICH APPEAR DURING AJAX CALLS */
+.bar {display:none; background:url(launch-images/loading.gif) no-repeat center; margin-top:100px; height:40px; width:100%;}
+.signupbar{display:none; background:url(launch-images/loadingsignup.gif) no-repeat center; height:40px; width:40px; margin: 0 auto; text-align: center;}	
+.signuploader {width: 40px; text-align: center; margin: 0 auto;}
+
+/* CONTACT US FORM */
+#contactus {color: #000;}
+#contactus p.intro {margin: 0 0 20px 0; font-size: 13px; color: #444; line-height: 21px; background: url(launch-images/envelope.png) no-repeat left top; padding: 0 0 0 92px; min-height: 55px;}
+#contactus p.intro a {color: #444;}
+#contactus input {width: 400px; -moz-border-radius: 2px 2px 2px 2px; background: url(launch-images/form_bg.png) repeat-x scroll left top #FFFFFF; border: 1px solid #DFDFDF; color: #333333; font-size: 20px; padding: 5px;}
+#contactus textarea {width:400px;height:100px; -moz-border-radius: 2px 2px 2px 2px;background:url(launch-images/form_bg.png) repeat-x scroll left top #FFFFFF;border:1px solid #DFDFDF;color:#333333; font-size: 20px; padding: 5px;}
+#contactus_fields {font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 21px; color: #555555;}
+#contactus_fields li {padding: 0 0 5px 0;}
+#contactus_fields li.border {border-bottom: 1px solid #EFEFEF; color: #666666; font-size: 20px; padding: 0 0 15px 0; margin: 0 0 10px 0;}
+#contactus_fields .submit {width: 131px; height: 44px; border: none; margin: 0; padding: 0; background: url(launch-images/sendit.gif) no-repeat top; cursor: pointer; text-indent: -9999px; font-size: 1px;}
+#contactus_fields .submit:hover {background-position: 0 -44px;}
+
+#confirmation h3 {font-size: 24px; font-style: italic; margin: 40px 0 10px 92px;}
+#confirmation p {margin: 0 0 0 92px; color: #444444; font-size: 16px; line-height: 24px;}
+
+/* ERROR MESSAGES */
+.contactUsForm span {display:none; font-size:12px; line-height:10px; padding-left:20px; color:#ff0000;}
+.signup_error {display: none; text-align: center;}

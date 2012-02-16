@@ -111,8 +111,6 @@ p.chat-message {
 .host-name {
   color: #FF9900;
 }
-.chat-message {
-}
 </style>
 <%= subscribe_to "/show/chats"%>
 
@@ -173,6 +171,7 @@ that he may want to talk to his audience about.
     <div class="row" id="bottom-row">
       <div class="span8" id="left-toolbox"> 
 	Any graph or analytics will go here. Anything that will help the Host do their job.
+	<span id='counter'>2</span>
       </div>
       <div class="span8" id="addplaylist"> 
 	<div id="container">
@@ -237,6 +236,9 @@ that he may want to talk to his audience about.
     function(){
       setInterval(function(){
 	$('#right-toolbox').load('<%= escape_javascript(show_requests_path) %>');
-      }, 60000);
+	$("#counter").flipCounter("renderCounter",<%= @messages.count%>).fadeIn("slow");
+      }, 5000);
+
     });
+
 </script>

@@ -1,0 +1,87 @@
+<div id="page">
+<%= @request.state if @request%>
+<div id="logo"><img src="assets/launch-images/logo.png" alt="Alchemy Logo" /></div>
+<div class="topsection">
+    <div id="sideleft">
+	<div id="progress"><img src="assets/launch-images/progress/50.png" alt="20%" /></div>
+	<div id="countdown" class=""></div>
+    </div><!-- end sideleft -->
+
+    <div id="middle">
+	<div id="feedback">
+	    <div class="signuploader"></div>
+	    <div class="signupbar"></div>
+	    <div class="signup_error"><img src="assets/launch-images/error_email.png" alt="Incorrect email address" border="0" /></div>
+	</div><!-- end #feedback -->
+    </div><!-- end #middle -->
+    <div id="sideright">
+	<div id="content">
+
+	    <h1>Alchemy is beautiful.</h1><p>Alchemy is a jQuery powered "under construction" template boasting with functionality. It has an AJAX contact form, it stores email addresses in MySQL database and XML file, there's a twitter feed and social media connectivity. Nicely themed progress indicator and a countdown, plus extensive configuration options, make this theme unquestionably attractive. <a href='http://themeforest.net/user/premiumdesign/portfolio?ref=premiumdesign'>Download PHP version &amp; WordPress Theme together!</a></p>                </div><!-- end #content -->
+	<div id="newsletter">
+	  <%= form_for(Subscriber.new, :method => :post, :remote => true) do |f| %>
+	    <%= f.text_field :email, :id => 'email', :class => 'focusField' %>
+	    <%= f.text_field :favstation, :id => 'favstation', :class => 'focusField' %>
+	    <%= f.submit "", :class => 'submit'%>
+	  <% end %>
+
+	</div><!-- end #newsletter -->
+	<div id="tweet">
+	    <span>40 minutes ago</span>Flesh Frolic! <a href="http://t.co/qOiNHbb">http://t.co/qOiNHbb</a>                </div><!-- end #tweet -->
+    </div><!-- end #sideright -->
+</div><!-- end .topsection -->
+	<div id="footer">
+		<ul class="address">
+
+			<li class="email contactusicon"><a href="">info@fmbuzz.com</a></li>
+			<li class="phone">(630) 448-2223</li>
+			<li class="web"><a href="http://stellarflux.com">http://www.fmbuzz.com</a></li>
+		</ul><!-- end address -->
+		<ul class="social">
+<!--			<li class="rss"><a class="tooltip" title="rss" href="http://zeglin.co.uk/rss"></a></li>
+			<li class="flickr"><a class="tooltip" title="flickr" href="http://flickr.com"></a></li>
+			<li class="vimeo"><a class="tooltip" title="vimeo" href="http://vimeo.com"></a></li>
+			<li class="google"><a class="tooltip" title="google" href=""></a></li>
+			<li class="youtube"><a class="tooltip" title="youtube" href="http://youtube.com"></a></li>-->
+			<li class="linkedin"><a class="tooltip" title="linkedin" href="http://linkedin.com"></a></li>
+			<li class="twitter"><a class="tooltip" title="twitter" href="http://twitter.com/zeglin"></a></li>
+			<li class="facebook"><a class="tooltip" title="facebook" href="http://facebook.com/wojtek.zeglin"></a></li>
+		</ul><!-- end #social -->
+	</div><!-- end footer -->
+
+</div><!-- end #page -->
+<!-- Below is the hidden contact form overlay code -->
+<div style='display:none'>
+	<div id="contactus" style='padding:10px; background:#fff;'>
+	<p class="intro">Hi there! Please use the contact form below if you have any questions related to this website. Alternatively you can send us an email to <a href="mailto:alchemy@zeglin.co.uk">alchemy@zeglin.co.uk</a>.</p>
+		<div class="loader"></div>
+		<div class="bar"></div>
+
+		<form action="contactus.php" class="contactUsForm" name="cform" method="post">
+			<ul id="contactus_fields">
+				<li><label for="name">Your name:</label><span class="name-missing">Please enter your name</span></li>
+				<li class="border"><input id="name" type="text" value="" name="name" /></li>
+				<li><label for="e-mail">Your e-mail:</label><span class="email-missing">Please enter a valid e-mail</span></li>
+				<li class="border"><input id="e-mail" type="text" value="" name="email" /></li>
+				<li><label for="message">Message:</label><span class="message-missing">Please enter your message</span></li>
+
+				<li><textarea id="message" rows="" cols="" name="message"></textarea></li>
+				<li><input class="submit" type="submit" name="submit" value="" onfocus="this.blur()"  /></li>
+			</ul><!-- end #contactus_fields -->
+		</form>
+	</div><!-- end #contactus -->
+</div><!-- end of hidden contact form overlay -->
+
+<script>
+  
+  $(document).ready(function() {
+    $('#new_subscriber').submit( function(){
+      $('.signuploader').append($('.signupbar'));
+      $('.signupbar').css({display:'block'});
+	$.post('/subsdcribers',{email:$('#email').val(), signo:$('#signo').val()},
+
+      return false;
+    });
+});
+
+</script>

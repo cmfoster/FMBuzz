@@ -7,6 +7,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require twitter/bootstrap
-//= require private_pub
-//= require watermark
+// require twitter/bootstrap
+// require private_pub			Add these back in when launched
+//=require watermark
+// require jquery.flipCounter.1.2
+
+//= require jquery.easing.1.3
+//= require alchemy
+//= require IE7
+//= require IE8
+//= require IE9
+//= require jquery.bubble.engine
+//= require jquery.colorbox-min
+//= require jquery.countdown
+//= require jquery.easing.1.3
+//= require jquery.validate.pack
