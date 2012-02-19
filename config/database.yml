@@ -21,7 +21,7 @@ test:
 production:
   adapter: postgresql
   database: fmbuzz_production
-  username: fmbuzz
+  username: fmbuzz_app
   password: cool17
   pool: 5
 
