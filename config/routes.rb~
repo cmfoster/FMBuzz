@@ -4,8 +4,8 @@ FMBuzz::Application.routes.draw do
   devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     root :to => 'home#launch' #   Set this to root again when ready to launch
   end
-  
-  resources :subscribers
+  resources :subscribers, :only => [:create]
+  if Rails.env.development?
 
   #   root :to => 'home#index'
   
@@ -26,4 +26,5 @@ FMBuzz::Application.routes.draw do
   resources :playlists, :only => [:show]
   match '/city' => 'home#cityindex'
   
+  end
 end
