@@ -23,8 +23,8 @@
     <div class="topbar" >
       <div class="topbar-inner">
         <div class="container-fluid">
-          <%= link_to "Home", root_path(:city => @city.city), :class => 'brand'  if @city %>
-	  <%= link_to "Home", root_path, :class => 'brand' unless @city %>
+          <%= link_to "FM Buzz", root_path(:city => @city.city), :class => 'brand'  if @city %>
+	  <%= link_to "FM Buzz", root_path, :class => 'brand' unless @city %>
 	  <ul class="nav" data-dropdown="dropdown">
 	    <li class="dropdown">	
 	      <% if @city %>
@@ -51,7 +51,7 @@
       </div>
     </div>
 </head>
-<body style="padding-top: 60px;">
+<body>
 <%= yield %>
 </body>
 </html>

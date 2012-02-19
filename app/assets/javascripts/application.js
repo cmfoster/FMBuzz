@@ -8,15 +8,12 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery.easing.1.3
-//= require jquery.bubble.engine
 //= require jquery.colorbox-min
-//= require jquery.countdown
-//= require jquery.easing.1.3
-//= require jquery.validate.pack
 //= require watermark
 //= require launch
 //= require twitter/bootstrap
 //= require private_pub
-//= require jquery.flipCounter.1.2
+//= require stickyfloat
+
 
 

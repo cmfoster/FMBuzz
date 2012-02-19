@@ -5,6 +5,7 @@ FMBuzz::Application.routes.draw do
     root :to => 'home#launch' #   Set this to root again when ready to launch
   end
   resources :subscribers, :only => [:create]
+
   if Rails.env.development?
 
   #   root :to => 'home#index'
