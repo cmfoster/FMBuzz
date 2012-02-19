@@ -123,6 +123,7 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.12.2)
     polyglot (0.3.3)
     private_pub (1.0.1)
       faye
@@ -209,6 +210,7 @@ DEPENDENCIES
   nokogiri (~> 1.5.0)
   omniauth-facebook
   paperclip
+  pg
   private_pub
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)
