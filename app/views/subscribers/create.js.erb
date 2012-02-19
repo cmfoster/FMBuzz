@@ -1,4 +1,9 @@
+$('#feedback>div').css({display:'none'});
 $('.signupbar').css({display:'none'});
-$('.signuploader').append("<%= escape_javascript(image_tag('launch-images/signup_thanks.png'))%>");
-$('#new_subscriber').fadeOut({ direction: "right" }, 4000);
-# Fade in a "Subscribed" Message or image
+<% if flash[:success]%>
+  $('#new_subscriber').fadeOut('slow', function(){
+  $('#new_subscriber').replaceWith("<h1 id='success'>Thank you for subscribing!</h1>").fadeIn('slow');});
+<% else %>
+  $('.signup_error').show('slow');
+  $('#errors').html('<%= flash[:error] %>')
+<% end %>

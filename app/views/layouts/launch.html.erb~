@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Alchemy Under Construction Template</title>
-<%= stylesheet_link_tag 'application' %>
-<%= javascript_include_tag 'application' %>
+<title>FM BuZZ</title>
+<%= stylesheet_link_tag 'launch' %>
+<%= javascript_include_tag 'launch' %>
 <link href='http://fonts.googleapis.com/css?family=Lato:regular,regularitalic,900' rel='stylesheet' type='text/css' />
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -14,12 +14,13 @@
 </script>
 <script type="text/javascript">
 //<![CDATA[
-    var secondsStr = "29217390";
+    var secondsStr = "17390";
 //]]>
 </script>
+<h3 id="errors"></h3>
 </head>
 
-<body class="red">
+<body class="white">
 <%=yield%>
 </body>
 </html>

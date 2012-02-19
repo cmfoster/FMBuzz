@@ -41,7 +41,7 @@
         particleDirection:          'right' /* 'right', 'left', 'center'*/,
         gravity:                    -100,
         imgSource:                  'assets/launch-images/bubble.png',
-        RenewBubbles:               'off'
+        RenewBubbles:               'on'
       };
       var options = $.extend(defaults, options);
       options.couter = 0;

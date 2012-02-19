@@ -8,7 +8,12 @@ class SubscribersController < ApplicationController
       subscriber.state = result[1].state if result[0].state
     end
     if subscriber.save
-      respond_with {flash[:notice] = "You are subscribed!"}
-    end    
+      SubscriberMailer.subscriber_email(subscriber).deliver if Rails.env.production?
+      respond_with {flash[:success] = "You are subscribed!"} 
+    else if subscriber.errors.any?
+      flash[:error] = subscriber.errors.full_messages.to_sentence
+      respond_with {flash[:error]}
+    end
+  end
   end
 end

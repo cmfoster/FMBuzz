@@ -1,10 +1,29 @@
+<style>
+#success {
+  color: #4B4B4B;
+  font-family: "Arial Black",Arial,Helvetica,sans-serif;
+  font-size: 40px;
+  margin: 0 0 20px;
+  padding: 0;
+  text-align: center;
+}
+</style>
+
 <div id="page">
 <%= @request.state if @request%>
-<div id="logo"><img src="assets/launch-images/logo.png" alt="Alchemy Logo" /></div>
+<!--  <%= image_tag('logofirst.png', :width => 260, :height => 250)%>
+  <%= image_tag('logosecond.png', :width => 240, :height => 85, :id => 'logosecond', :style => 'margin-left:-20px;display:inline;padding-bottom:65px;')%>
+  <%= image_tag('slogan.png', :id => 'slogan', :style => 'display:none')%>-->
+<div id="logo"><%= image_tag('logo.png', :width => 460, :height => 250)%></div>
 <div class="topsection">
     <div id="sideleft">
-	<div id="progress"><img src="assets/launch-images/progress/50.png" alt="20%" /></div>
-	<div id="countdown" class=""></div>
+	<h1 class="header1" id="listenbtn">Listen and request music.</h1>
+	<h1 class="header1" id="interactbtn" style="margin-top:160px;">Interact with the radio host</h1>
+	<h1 class="header1" id="winbtn" style="margin-top: 320px;">Win points and prizes while you do it!</h1>
+	<%= image_tag('radio_waves.png', :id => 'radiowaves')%>
+	<%= image_tag('radio_tower.png', :width => 350, :height => 530, :id => 'radioimage')%>
+	<div id="progress" style="display:none"><img src="assets/launch-images/progress/50.png" alt="20%" /></div>
+	<div id="countdown" style="display:none" class=""></div>
     </div><!-- end sideleft -->
 
     <div id="middle">
@@ -15,27 +34,65 @@
 	</div><!-- end #feedback -->
     </div><!-- end #middle -->
     <div id="sideright">
-	<div id="content">
-
-	    <h1>Alchemy is beautiful.</h1><p>Alchemy is a jQuery powered "under construction" template boasting with functionality. It has an AJAX contact form, it stores email addresses in MySQL database and XML file, there's a twitter feed and social media connectivity. Nicely themed progress indicator and a countdown, plus extensive configuration options, make this theme unquestionably attractive. <a href='http://themeforest.net/user/premiumdesign/portfolio?ref=premiumdesign'>Download PHP version &amp; WordPress Theme together!</a></p>                </div><!-- end #content -->
-	<div id="newsletter">
-	  <%= form_for(Subscriber.new, :method => :post, :remote => true) do |f| %>
-	    <%= f.text_field :email, :id => 'email', :class => 'focusField' %>
-	    <%= f.text_field :favstation, :id => 'favstation', :class => 'focusField' %>
-	    <%= f.submit "", :class => 'submit'%>
-	  <% end %>
+	<div id="content"> <!--Interchangable descriptions-->
+	  <span id="description"><!--Interchangable descriptions HIDDEN-->
+	    <h1>Communication is beautiful.</h1>
+	    <p>We know people like to listen to the radio whether AM talk for FM music,
+		but we also know people love to voice their opinions or request music. Realizing
+		the large communication gap between a radio show host and his listeners
+		we've decided to create a way to bring people closer to the host and others
+		interested in the same talk/music shows. Be one of the first members on our site
+		when we launch and sign up below!
+	    </p> 
+	  </span> 
+	  <span id="description2" style="display:none">
+	    <h1>Listen and Request.</h1>
+	    <p><b>Yeah thats right</b> request away. Let the host know what you'd like to hear, dont be shy.
+		We're going to make it a sinch for you to request music, we'll then take those requests,
+		mix them into a culver of cyber stew with a dash of secret sauce and feed it to the show host you're listening to.
+		Now being a little more serious, your requests will give the host the ability to personalize the days music based
+		on the requests he gets, so <b>the more you request the better the music will get!</b>
+	    </p> 
+	  </span>
+	  <span id="description3" style="display:none">
+	    <h1>Interaction.</h1>
+	    <p><b>So, I can chat with members of the show without calling or texting silly numbers? Yes!</b>
+		Not only can you chat with members of the show, you can chat with other like minded listening members. We have a slew 
+		of other features that only beta members will have the privilage of using. <b>Sign up below and become part of the show!</b>
+	    </p> 
+	  </span>
+	  <span id="description4" style="display:none">
+	    <h1>Earn Points!</h1>
+	    <p><b>Points? Like, being charged points on a mortgage type points?</b> Um No...
+		Like, earn points by participating in the show through our interaction features type points.
+		Without going into too much deatil because we know you like suprises, you can <b>use points to buy
+		and download music, get free concert tickets, or win a paid for get away vacation. You can also win
+		any special prizes through contests show hosts run through our site.</b> 
+	    </p> 
+	  </span> <!--end descriptions-->
+	</div><!-- end #content -->
+	<div id="newsletter" style="text-align: center;">
+	  <span id="startbtn">Click Here</span>
+	  <span id="sform" style="display:none">
+	    <%= form_for(Subscriber.new, :method => :post, :remote => true) do |f| %>
+	      <%= f.text_field :email, :id => 'email', :class => 'focusField' %>
+	      <%= f.text_field :favstation, :id => 'favstation', :class => 'focusField' %>
+	      <%= f.submit "", :class => 'submit'%>
+	    <% end %>
+	  </span>
 
 	</div><!-- end #newsletter -->
 	<div id="tweet">
-	    <span>40 minutes ago</span>Flesh Frolic! <a href="http://t.co/qOiNHbb">http://t.co/qOiNHbb</a>                </div><!-- end #tweet -->
+	    <span>40 minutes ago</span>Flesh Frolic! <a href="http://t.co/qOiNHbb">http://t.co/qOiNHbb</a> 
+	</div><!-- end #tweet -->
     </div><!-- end #sideright -->
 </div><!-- end .topsection -->
 	<div id="footer">
 		<ul class="address">
 
 			<li class="email contactusicon"><a href="">info@fmbuzz.com</a></li>
-			<li class="phone">(630) 448-2223</li>
-			<li class="web"><a href="http://stellarflux.com">http://www.fmbuzz.com</a></li>
+<!--			<li class="phone">(630) 448-2223</li>-->
+			<li class="web"><a href="http://fmbuzz.com">http://www.fmbuzz.com</a></li>
 		</ul><!-- end address -->
 		<ul class="social">
 <!--			<li class="rss"><a class="tooltip" title="rss" href="http://zeglin.co.uk/rss"></a></li>
@@ -56,7 +113,6 @@
 	<p class="intro">Hi there! Please use the contact form below if you have any questions related to this website. Alternatively you can send us an email to <a href="mailto:alchemy@zeglin.co.uk">alchemy@zeglin.co.uk</a>.</p>
 		<div class="loader"></div>
 		<div class="bar"></div>
-
 		<form action="contactus.php" class="contactUsForm" name="cform" method="post">
 			<ul id="contactus_fields">
 				<li><label for="name">Your name:</label><span class="name-missing">Please enter your name</span></li>
@@ -71,14 +127,67 @@
 		</form>
 	</div><!-- end #contactus -->
 </div><!-- end of hidden contact form overlay -->
-
 <script>
-  
+//   WARERMARKS
   $(document).ready(function() {
+  $("#email").Watermark("Enter your email");
+    $("#favstation").Watermark("Your Favorite Station 'ie. WLTL'");
     $('#new_subscriber').submit( function(){
       $('.signuploader').append($('.signupbar'));
       $('.signupbar').css({display:'block'});
     });
 });
+// SIDELEFT BUTTON SLIDES
+$('#logo').click( function() {
+  if($('#description').is(':hidden')) {
+    $('#sideleft>h1:not(this)').removeClass("active");
+    $('#content>span:visible').hide('fast', function() {
+    $('#description').show('slide', {direction: "right"}, 700);
+    });
+  }
+});
+$('#listenbtn').click( function() {
+  if($('#description2').is(':hidden')) {
+    $('#sideleft>h1:not(this)').removeClass("active");
+    $('#content>span:visible').hide('fast', function() {
+      $('#description2').show('slide', {direction: "right"}, 700);
+      $('#listenbtn').addClass("active");
+    });
+  }
+});
+$('#interactbtn').click( function() {
+  if($('#description3').is(':hidden')) {
+    $('#sideleft>h1:not(this)').removeClass("active");
+    $('#content>span:visible').hide('fast', function() {
+      $('#description3').show('slide', {direction: "right"}, 700);
+      $('#interactbtn').addClass("active");
+    });
+  }
+});
+$('#winbtn').click( function() {
+  if($('#description4').is(':hidden')) {
+    $('#sideleft>h1:not(this)').removeClass("active");
+    $('#content>span:visible').hide('fast', function() {
+      $('#description4').show('slide', {direction: "right"}, 700);
+      $('#winbtn').addClass("active");
+    });
+  }
+});
+// START BUTTON TRANSITION
+$('#startbtn').click( function() {
+  $(this).hide('fast',function() {
+    $('#sform').fadeIn(2000);
+  });
+});
+// FADE LOOP
+$.fn.fadeLoop = function()
+{
+    $(this).delay(4000).animate({opacity: 0.25}, 1000, function() {
+        $(this).animate({opacity: .8}, 2000,  $(this).fadeLoop);
+    });
+};
 
+$(document).ready(function() {
+    $('#radiowaves').fadeLoop();
+});
 </script>

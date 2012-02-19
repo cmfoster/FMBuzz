@@ -40,7 +40,7 @@
         particleScatteringY:        200,
         particleDirection:          'right' /* 'right', 'left', 'center'*/,
         gravity:                    -100,
-        imgSource:                  'assets/launch-images/bubble.png',
+        imgSource:                  'assets/lightning.png',
         RenewBubbles:               'on'
       };
       var options = $.extend(defaults, options);

@@ -21,66 +21,37 @@ $(document).ready(function() {
   );
 });
 
+
+
 //INITIALIZE BUBBLES
-      $(document).ready(function() {
+//      $(BROKENdocument).ready(function() {
         //Build Bubble Machines with the Bubble Engine ------------------------
-        var SoapBubbleMachineNumber1 = $('fn').BubbleEngine({
-          particleSizeMin:            0,
-          particleSizeMax:            30,
-          particleSourceX:            $(window).width()/2-245,
-          particleSourceY:            230, // this Y and above X are the bubble locations
-          particleAnimationDuration:  5000,
-          particleDirection:          'center',
-          particleAnimationDuration:  2000,
-          particleAnimationVariance:  500,
-          particleScatteringX:        50,
-          particleScatteringY:        100,
-          gravity:                    -100
-        });
-        //Build Bubble Machines with the Bubble Engine ------------------------
-        var SoapBubbleMachineNumber2 = $('fn').BubbleEngine({
-          particleSizeMin:            0,
-          particleSizeMax:            7,
-          particleSourceX:            $(window).width()/2-178,
-          particleSourceY:            275,
-          particleAnimationDuration:  5000,
-          particleDirection:          'center',
-          particleAnimationDuration:  2000,
-          particleAnimationVariance:  500,
-          particleScatteringX:        10,
-          particleScatteringY:        100,
-          gravity:                    -100
-        });
-        //Build Bubble Machines with the Bubble Engine ------------------------
-        var SoapBubbleMachineNumber3 = $('fn').BubbleEngine({
-          particleSizeMin:            0,
-          particleSizeMax:            7,
-          particleSourceX:            $(window).width()/2-340,
-          particleSourceY:            280,
-          particleAnimationDuration:  5000,
-          particleDirection:          'center',
-          particleAnimationDuration:  2000,
-          particleAnimationVariance:  500,
-          particleScatteringX:        10,
-          particleScatteringY:        100,
-          gravity:                    -100
-        });
-        //Start Bubble Machines -----------------------------------------------
-        SoapBubbleMachineNumber1.addBubbles(25);
-        SoapBubbleMachineNumber2.addBubbles(25);
-        SoapBubbleMachineNumber3.addBubbles(25);
-      });
+//         var SoapBubbleMachineNumber1 = $('fn').BubbleEngine({
+//           particleSizeMin:            0,
+//           particleSizeMax:            40,
+//           particleSourceX:            $(window).width()/2-330,
+//           particleSourceY:            230, // this Y and above X are the bubble locations
+//           particleAnimationDuration:  5000,
+//           particleDirection:          'center',
+//           particleAnimationDuration:  5000,
+//           particleAnimationVariance:  50,
+//           particleScatteringX:        1,
+//           particleScatteringY:        100,
+//           gravity:                    -30
+//         });
+//         //Start Bubble Machines -----------------------------------------------
+//         SoapBubbleMachineNumber1.addBubbles(1);
+//       });
 
 
-
-//COUNTDOWN LAYOUT
-$(function () {
-$('#countdown').countdown({until: secondsStr, compact: true, 
-    layout: '<div class="days"><div class="image{d100} centos"></div><div class="image{d10}"></div><div class="image{d1}"></div></div>' +
-			'<div class="hours"><div class="image{h10}"></div><div class="image{h1}"></div></div>' +
-			'<div class="minutes"><div class="image{m10}"></div><div class="image{m1}"></div></div><div class="seconds"><div class="image{s10}"></div>' +
-			'<div class="image{s1}"></div></div>'});
-});
+// //COUNTDOWN LAYOUT
+// $(function () {
+// $('#countdown').countdown({until: secondsStr, compact: true, 
+//     layout: '<div class="days"><div class="image{d100} centos"></div><div class="image{d10}"></div><div class="image{d1}"></div></div>' +
+// 			'<div class="hours"><div class="image{h10}"></div><div class="image{h1}"></div></div>' +
+// 			'<div class="minutes"><div class="image{m10}"></div><div class="image{m1}"></div></div><div class="seconds"><div class="image{s10}"></div>' +
+// 			'<div class="image{s1}"></div></div>'});
+// });
 
 
 //CONTACT US FORM
@@ -188,7 +159,7 @@ $(document).ready(function(){
 
 
 //CHANGING EMAIL INPUT FIELD
-$(document).ready(function() {
+// $(document).ready(function() {
 //     $('input[type="text"]').addClass("idleField");
 // 	$('input[type="text"]').focus(function() {
 // 		$(this).removeClass("idleField").addClass("focusField");
@@ -202,7 +173,6 @@ $(document).ready(function() {
 // 	    	$(this).removeClass("idleField").addClass("focusField");
 //         }
 //     });
-    $("#email").Watermark("Enter your email");
-    $("#favstation").Watermark("Your Favorite Station 'ie. WLTL'");
-});
+
+// });
 

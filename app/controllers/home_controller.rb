@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  
+
   def index
 #     redirect_to dashboard_dj_index_path if current_disk_jockey
 #     ip = request_ip
