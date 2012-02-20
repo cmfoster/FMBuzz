@@ -2,5 +2,9 @@ $('#right-content').html("<%= escape_javascript(render :partial => 'partials/cit
 <% if @city.picurl? %>
   $('#row-content').css("background", "url(<%= @city.picurl%>) no-repeat right top");
   $('#row-content').css("background-size", "85%");
-
+<% else %>
+  $('#row-content').css("background", "none");
+<% end %>
+<% if @city.city == "Chicago" %>
+  $('#row-content').append("<%= escape_javascript(render :partial => 'partials/imageauthor')%>");
 <% end %>

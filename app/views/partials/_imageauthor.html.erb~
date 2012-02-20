@@ -1,0 +1,4 @@
+<div id="imgauthor">
+  <div class="transparency"></div>
+ <h4><small><span><b>Image By:</b></span></small> <%= link_to "Kelly Zech", 'http://collectedideas.wordpress.com' %></h4>
+<div>
