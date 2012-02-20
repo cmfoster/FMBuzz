@@ -1,0 +1,6 @@
+$('#right-content').html("<%= escape_javascript(render :partial => 'partials/cityindex')%>").fadeIn('8000');
+<% if @city.picurl? %>
+  $('#row-content').css("background", "url(<%= @city.picurl%>) no-repeat right top");
+  $('#row-content').css("background-size", "85%");
+
+<% end %>

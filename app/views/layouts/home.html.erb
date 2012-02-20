@@ -23,18 +23,18 @@
     <div class="topbar" >
       <div class="topbar-inner">
         <div class="container-fluid">
-          <%= link_to "FM Buzz", root_path(:city => @city.city), :class => 'brand'  if @city %>
+          <%= link_to "FM Buzz", root_path(:city => @city), :class => 'brand'  if @city %>
 	  <%= link_to "FM Buzz", root_path, :class => 'brand' unless @city %>
 	  <ul class="nav" data-dropdown="dropdown">
 	    <li class="dropdown">	
 	      <% if @city %>
-	      <%= link_to @city.city, '#', :class => 'dropdown-toggle', :city => @city.city %></a>
+	      <%= link_to @city.city, '#', :class => 'dropdown-toggle', :city => @city %></a>
 	      <% else %>
 		<a class="dropdown-toggle" href="#">Select a City</a>
 	      <% end %>
 	      <ul class="dropdown-menu">
 		<% @locations.each do |l| %>
-		  <li><%= link_to l.city, :action => 'cityindex', :city => l.city %></li>
+		  <li><%= link_to l.city, city_path(:city => l.city), :remote => true %></li>
 		  <li class="divider"></li>
 		<% end %>
 	      </ul>

@@ -35,11 +35,22 @@ class Show < ActiveRecord::Base
   end
   
   def active
+    if self.start_time? && self.end_time?
      Time.now >= self.start_time && Time.now <= self.end_time
+    end
   end
   
   def toporder
     questions.sort{|a1, a2| a2.likes.size <=> a1.likes.size}
+  end
+  
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"]).group_by(&:location)
+    else
+      find(:all)
+      {:status => 'We werent able to find that station but here are some that should interest you'}
+    end
   end
   
 end

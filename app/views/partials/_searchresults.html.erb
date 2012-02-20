@@ -1,0 +1,10 @@
+<ul class="unstyled">
+  <% @radioshows.sort.each do |location, show| %>
+    <li><p><%= location.city %><p></li>
+    <ul>
+      <% show.each do |s| %>
+	<li><p><%= s.name %></p></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>

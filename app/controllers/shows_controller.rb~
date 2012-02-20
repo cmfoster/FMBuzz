@@ -1,6 +1,15 @@
 class ShowsController < ApplicationController
-  respond_to :js, :html
+  respond_to :html, :except => :index
+  respond_to :js, :only => :show
   before_filter :authenticate_show!, :only => [:edit,:dashboard, :requests]
+  
+  
+  def index
+    if params[:search]
+      @radioshows = Show.search(params[:search])
+      respond_with @radioshows
+    end      
+  end
   
   def show
       @show = Show.find(params[:id])
@@ -12,6 +21,7 @@ class ShowsController < ApplicationController
       @question = @show.questions.build
   end
   
+#   Question Vote
   def vote
     @show = Show.find(params[:show_id])
     if params[:question]

@@ -1,0 +1,19 @@
+<div id="showlist-row" class="row">
+  <h1><%= @city.city.titleize %> shows</h1>
+  <% @shows.sort_by{|a|a.active ? 0:1}.each do |show|%>
+  <div class="span5 station-link">
+    <h2><%= show.name.titleize if show.name %><br />
+    <span class="label"><%= show.station.upcase if show.station%></span> </h2>
+    <p><%= show.about.truncate(120) if show.about %></p>
+    <p>Current Topic: <span class="label notice"><%= show.topic if show.topic%></span></p>
+    <% if show.active %>
+      <span class="label success" style="font-size:20px;">On Air</span>
+      <br />
+      <br />
+      <p><%= link_to "Join the show! &raquo;".html_safe, show_path(show), :class => 'btn' %></p>
+    <% else %>
+      <span class="label important" style="font-size:20px;">Offline</span>
+    <% end %>
+</div>
+  <% end %>
+</div>

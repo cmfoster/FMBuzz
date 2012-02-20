@@ -1,0 +1,24 @@
+    <div id="middle-wrapper" class="span17">
+      <div id="row-content" class="row border">
+	<div id="features-column" class="span4">
+	  <%= form_tag shows_path, :method => :get, :remote => true do%>
+	    <%= text_field_tag :search %>
+	    <%= submit_tag "search" %>
+	  <% end %>
+	  <div id="searchresults" class="span4"></div>
+	</div>
+	<div id="right-content" class="span10">Content Here</div>
+      <div id="bottom-filler" class="span17">Bottom content</div>
+
+      </div>
+    </div>
+
+  <div id="home-logo" class="sticky"></div>
+  <%= render :partial => 'partials/footer'%>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('#search').watermark('Search')
+});
+</script>

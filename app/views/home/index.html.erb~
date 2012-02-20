@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <div id="middle-wrapper" class="span17">
-      <div id="row-content" class="row">
+      <div id="row-content" class="row border">
 	<div id="features-column" class="span4">
 
 	</div>
 	<div id="right-content" class="span10"></div>
-      <div id="bottom-filler" class="span17 border"></div>
+      <div id="bottom-filler" class="span17"></div>
 
       </div>
     </div>

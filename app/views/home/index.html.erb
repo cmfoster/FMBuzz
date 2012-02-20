@@ -1,4 +1,7 @@
 <div class="container-fluid">
+  <% if user_signed_in? %>
+    <%= render :partial => 'signedin' %>
+  <% else %>
     <div id="middle-wrapper" class="span17">
       <div id="row-content" class="row border">
 	<div id="features-column" class="span4">
@@ -13,6 +16,7 @@
   <div id="home-logo" class="sticky"></div>
   <%= render :partial => 'partials/footer'%>
 </div>
+<% end %>
 
 
 <script>
