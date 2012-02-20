@@ -58,7 +58,7 @@ body {
 #middle-wrapper {
   height: 100%;
   margin: 10px auto;
-  border-radius: 10px;
+  border-radius: 0px;
   color:  rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 #left-wrapper {
@@ -159,7 +159,7 @@ body {
   right: 0;
   overflow: hidden;
   border-radius: 40px 0 0 0;
-  padding-left: 20px;
+  text-align: center
 }
 #imgauthor h4 a {
   color: #ed3237;
