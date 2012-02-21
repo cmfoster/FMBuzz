@@ -1,1 +1,1 @@
-<%stuff%>
+$('#searchresults').html("<%= escape_javascript(render :partial => 'partials/cityindex')%>").fadeIn('slow');
