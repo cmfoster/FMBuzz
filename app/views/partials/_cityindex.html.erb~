@@ -1,51 +1,27 @@
 <!--IF CITY SELECTION FUNCTION-->
 <% if @shows %>
   <div id="showlist-row" class="row">
-
-<!--    <h1><%= @city.city.titleize %> shows</h1>
     <% @shows.sort_by{|a|a.active ? 0:1}.each do |show|%>
-    <div class="span5 station-link">
-      <h2><%= show.name.titleize if show.name %><br />
-      <span class="label"><%= show.station.upcase if show.station%></span> </h2>
-      <p><%= show.about.truncate(120) if show.about %></p>
-      <p>Current Topic: <span class="label notice"><%= show.topic if show.topic%></span></p>
-      <% if show.active %>
-	<span class="label success" style="font-size:20px;">On Air</span>
-	<br />
-	<br />
-	<p><%= link_to "Join the show! &raquo;".html_safe, show_path(show), :class => 'btn' %></p>
-      <% else %>
-	<span class="label important" style="font-size:20px;">Offline</span>
-      <% end %>
-  </div>
-    <% end %>-->
 
-    <% @shows.sort_by{|a|a.active ? 0:1}.each do |show|%>
-      <div id="show-wrapper" class="span3 border <%= "showoffline" unless show.active %>">
-	<div class="transparency blue "></div>
-	<h6><%= show.name.titleize if :name %></h6>
-	<div class="bottombtnwrapper ">
-	  <%= link_to "Live", show_path(show), :class => 'btn green' if show.active %>
-	  <p class="offline"><i><%= "Offline" unless show.active %></i></p>
-	</div>
-      </div>
+      <%= render :partial => 'partials/showlisttemplate', :locals => {:show => show}%>   <!--Obviously where the _showlisttemplate.html.erb is called-->
+
     <% end %>
-
   </div>
 <% end %>
 
 <!--IF SEARCH FUNCTION-->
 
 <% if @radioshows %>
-<ul class="unstyled">
-  <% @radioshows.sort.each do |location, show| %>
-    <li><p><%= location.city %><p></li>
-    <ul>
-      <% show.each do |s| %>
-	<li><p><%= s.name %></p></li>
-      <% end %>
-    </ul>
-  <% end %>
-</ul>
+  <div id="showlist-row" class="row">
+    <% @radioshows.sort.each do |location, show| %>
+      <div class="row searchrows">
+	<h1><%= location.city %></h1>
+	  <% show.each do |s| %>
 
+	    <%= render :partial => 'partials/showlisttemplate', :locals => {:show => s}%> <!--Again _showlisttemplate.html.erb is called-->
+
+	  <% end %>
+      </div>
+    <% end %>
+  </div>
 <% end %>

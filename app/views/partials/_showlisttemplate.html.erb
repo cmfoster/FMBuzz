@@ -1,0 +1,10 @@
+<div id="show-wrapper" class="span3 border <%= "showoffline" unless show.active %>">
+  <div class="transparency blue "></div>
+  <h6><%= show.name.titleize if :name %></h6>
+  <p><b>Host:</b> <%= show.host || "None listed" %></p>
+  <p><%= show.about ? show.about.truncate(55):"No description" %></p>
+  <div class="bottombtnwrapper">
+    <%= link_to "Live", show_path(show), :class => 'btn green' if show.active %>
+  </div>
+    <p class="offline"><i><%= "Offline" unless show.active %></i></p>
+</div>

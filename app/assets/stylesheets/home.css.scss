@@ -8,8 +8,10 @@
 .red {background-color: #ed3237; }
 .blue {background-color: #81A8B8; }
 .gray {background-color: gray; }
-.offline {font-weight: 900; text-align: center; font-size: 24px;color: #ed3237; position: absolute; top: 50%; width: 100%;}
-.showoffline { opacity: .4;}
+.offline {font-weight: 900; letter-spacing: 4px; opacity: .4; background-color: #ed3237; text-align: center; font-size: 24px;color: #FFF; position: absolute; top: 50%; width: 100%;}
+.showoffline { opacity: .6;}
+/*Host name, not the words 'host'*/
+.host {margin-left: 5px;}
 // -------------------
 html, body {
  height: 100%; 
@@ -18,15 +20,6 @@ body {
  background-color:  #FFF;
  color: gray; 
  padding-top: 40px;
-}
-//STATION LINK CARDS
-.station-link {
-  margin-left: 0;
-  width: 230px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-.station-link h1 {
 }
 // TESTING
 .border {
@@ -138,12 +131,15 @@ body {
   margin-left: 10px;
   color: red;
 }
-//SHOW LIST ROW
-#showlist-row {	
+//SHOW LIST ROW-----------------------------
+#showlist-row {
   width: 100%;
   height: 90%;
   overflow-y: auto;
-  
+}
+#showlist-row .searchrows {
+  margin: 20px;
+  text-align: center;
 }
 #showlist-row h1 {
   margin: 10px 0 0 0;
@@ -178,12 +174,12 @@ body {
   font-weight: bold;
   font-family: "Arial Black",Arial,Helvetica,sans-serif;
 }
-// SHOW SELECT BOX
+// SHOW SELECT BOX------------------------------
 #show-wrapper {
   margin: 20px;
   overflow: hidden;
   position: relative;
-  height: 150px;
+  height: 175px;
   color:  rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); 
 }
 #show-wrapper .bottombtnwrapper {
@@ -213,6 +209,10 @@ body {
   text-align: center;
   color: #ed3237;
   opacity: .8;
+}
+#show-wrapper p {
+ margin-left: 5px; 
+ padding-right: 5px;
 }
 .transparency {
     opacity:0.1;  
