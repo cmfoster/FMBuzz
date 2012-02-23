@@ -3,7 +3,7 @@
 <head>
 <!--  <link rel="shortcut icon" href="/images/favicon.ico" />-->
   <title><%= @city.city if @city%> Radio</title>
-  <%= stylesheet_link_tag 'application', 'home' %>
+  <%= stylesheet_link_tag 'application', 'home', 'shows' %>
   <%= javascript_include_tag  'application' %>
   <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tag %>
@@ -77,7 +77,7 @@
     </div>
     <%= "<p id='flash' style='display:none;'>#{flash[:notice]}</p>".html_safe if flash[:notice]%>
 </head>
-<body style="padding-top: 60px;">
+<body>
   <%= yield %>
 </body>
 </html>

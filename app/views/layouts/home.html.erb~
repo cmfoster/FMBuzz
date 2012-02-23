@@ -3,7 +3,7 @@
 <head>
 <!--  <link rel="shortcut icon" href="/images/favicon.ico" />-->
   <title><%= @city.city if @city%> Radio</title>
-  <%= stylesheet_link_tag 'application', 'home' %>
+  <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag  'application' %>
   <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tag %>
@@ -34,7 +34,7 @@
 	      <% end %>
 	      <ul class="dropdown-menu">
 		<% @locations.each do |l| %>
-		  <li><%= link_to l.city, :action => 'cityindex', :city => l.city, :remote => true %></li>
+		  <li><%= link_to l.city, city_path(:city => l.city), :remote => true %></li>
 		  <li class="divider"></li>
 		<% end %>
 	      </ul>

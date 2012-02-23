@@ -1,6 +1,7 @@
-<!--IF CITY SELECTION FUNCTION-->
+<!--IF CITYINDEX SELECTION FUNCTION-->
 <% if @shows %>
   <div id="showlist-row" class="row">
+    <h1><%= @city.city %></h1>
     <% @shows.sort_by{|a|a.active ? 0:1}.each do |show|%>
 
       <%= render :partial => 'partials/showlisttemplate', :locals => {:show => show}%>   <!--Obviously where the _showlisttemplate.html.erb is called-->

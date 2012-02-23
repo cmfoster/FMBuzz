@@ -1,10 +1,7 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-// Buttons
+
 .btn.green { background-color: hsl(101, 61%, 23%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="hsl(101, 61%, 47%)", endColorstr="hsl(101, 61%, 23%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(101, 61%, 47%)), to(hsl(101, 61%, 23%))); background-image: -moz-linear-gradient(top, hsl(101, 61%, 47%), hsl(101, 61%, 23%)); background-image: -ms-linear-gradient(top, hsl(101, 61%, 47%), hsl(101, 61%, 23%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(101, 61%, 47%)), color-stop(100%, hsl(101, 61%, 23%))); background-image: -webkit-linear-gradient(top, hsl(101, 61%, 47%), hsl(101, 61%, 23%)); background-image: -o-linear-gradient(top, hsl(101, 61%, 47%), hsl(101, 61%, 23%)); background-image: linear-gradient(top, hsl(101, 61%, 47%), hsl(101, 61%, 23%)); border-color: hsl(101, 61%, 23%) hsl(101, 61%, 23%) hsl(101, 61%, 17%); color: #fff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.39); -webkit-font-smoothing: antialiased; }
 .btn.red { background-color: hsl(0, 69%, 22%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="hsl(0, 69%, 42%)", endColorstr="hsl(0, 69%, 22%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(0, 69%, 42%)), to(hsl(0, 69%, 22%))); background-image: -moz-linear-gradient(top, hsl(0, 69%, 42%), hsl(0, 69%, 22%)); background-image: -ms-linear-gradient(top, hsl(0, 69%, 42%), hsl(0, 69%, 22%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(0, 69%, 42%)), color-stop(100%, hsl(0, 69%, 22%))); background-image: -webkit-linear-gradient(top, hsl(0, 69%, 42%), hsl(0, 69%, 22%)); background-image: -o-linear-gradient(top, hsl(0, 69%, 42%), hsl(0, 69%, 22%)); background-image: linear-gradient(top, hsl(0, 69%, 42%), hsl(0, 69%, 22%)); border-color: hsl(0, 69%, 22%) hsl(0, 69%, 22%) hsl(0, 69%, 17%); color: #fff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33); -webkit-font-smoothing: antialiased; }
-// COLORS
+/*// COLORS*/
 .red {background-color: #ed3237; }
 .blue {background-color: #81A8B8; }
 .gray {background-color: gray; }
@@ -12,22 +9,22 @@
 .showoffline { opacity: .6;}
 /*Host name, not the words 'host'*/
 .host {margin-left: 5px;}
-// -------------------
+/*// -------------------*/
 html, body {
  height: 100%; 
 } 
 body {
  background-color:  #FFF;
  color: gray; 
- padding-top: 0px;
+ padding-top: 40px;
 }
-// TESTING
+/*// */
 .border {
   border-radius: 8px;
   border: 1px solid black;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
-//---------
+/*//---------*/
 .topbar-inner {
   background-image: -moz-linear-gradient(center top , #F5F5F5, #FFF);
 }
@@ -50,7 +47,7 @@ body {
 .topbar p a:hover {
  color: gray; 
 }
-// HOME LAYOUT
+/*// HOME LAYOUT*/
 .container-fluid {
   height:100%;
 }
@@ -75,14 +72,14 @@ body {
   background: url('logo.png') no-repeat right top;
   background-size: 100%;
 }
-// MIDDLE WRAPPER CONTENT
+/*// MIDDLE WRAPPER CONTENT*/
 #middle-wrapper h1 {
   text-align: center;
   color: #4B4B4B;
   font-size: 30px;
   overflow: hidden;
 }
-// DECORATION
+/*// DECORATION*/
 #features-column {
   margin-left: 0;
   height: 500px;
@@ -100,7 +97,7 @@ body {
   overflow: hidden;
   position: relative;
 }
-// BORDER FOR FOR RIGHT CONTENT SET THROUGH ROW WRAPPER
+/*// BORDER FOR FOR RIGHT CONTENT SET THROUGH ROW WRAPPER*/
 #row-content {
   overflow: hidden;
   border-right: 1px solid gray;
@@ -113,7 +110,7 @@ body {
   height: 200px;
   background-color: #81A8B8;
 }
-// FEATURES COLUMN FOR SIGNED IN USERS
+/*// FEATURES COLUMN FOR SIGNED IN USERS*/
 #features-column [type=submit] {
   display: none;
 }
@@ -131,7 +128,7 @@ body {
   margin-left: 10px;
   color: red;
 }
-//SHOW LIST ROW-----------------------------
+/*//SHOW LIST ROW-----------------------------*/
 #showlist-row {
   width: 100%;
   height: 90%;
@@ -144,7 +141,7 @@ body {
 #showlist-row h1 {
   margin: 10px 0 0 0;
 }
-//IMAGE AUTHOR REFERENCE
+/*//IMAGE AUTHOR REFERENCE*/
 
 #imgauthor .transparency {
     opacity:0.5;  
@@ -174,7 +171,7 @@ body {
   font-weight: bold;
   font-family: "Arial Black",Arial,Helvetica,sans-serif;
 }
-// SHOW SELECT BOX------------------------------
+/*// SHOW SELECT BOX------------------------------*/
 #show-wrapper {
   margin: 20px;
   overflow: hidden;

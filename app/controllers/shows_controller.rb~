@@ -1,6 +1,5 @@
 class ShowsController < ApplicationController
-  respond_to :html, :except => :index
-  respond_to :js, :only => :show
+  respond_to :html, :js
   before_filter :authenticate_show!, :only => [:edit,:dashboard, :requests]
   
   
@@ -52,11 +51,11 @@ class ShowsController < ApplicationController
   
   def songlist
     if current_show && request.referer.scan('dashboard').size == 1
-      @playlist = Playlist.find_by_id(params[:playlist_id])
+      playlist = Playlist.find_by_id(params[:playlist_id])
       @artist = Artist.find_by_id(params[:artist_id])
       @artistsongs = Array.new
       @artist.songs.each do |song|
-	@artistsongs << song unless @playlist.songs.where('id = ?', song.id) == false
+	@artistsongs << song unless playlist.songs.where('id = ?', song.id) == false
       end
     else
       @show = Show.find_by_id(params[:show_id])

@@ -40,8 +40,9 @@ class Show < ActiveRecord::Base
     end
   end
   
-  def toporder
-    questions.sort{|a1, a2| a2.likes.size <=> a1.likes.size}
+  def toporder #changed to grab all questions made within the past 24 hours
+    q = self.questions.where(:created_at => 24.hours.ago..Time.now)
+    return q.sort{|a1, a2| a2.likes.size <=> a1.likes.size}
   end
   
   def self.search(search)
@@ -51,6 +52,13 @@ class Show < ActiveRecord::Base
       find(:all)
       {:status => 'We werent able to find that station but here are some that should interest you'}
     end
+  end
+  
+  def modulation #Checker method to filter whether AM, FM, or both 
+    a = "AM" if am? 
+    f = "FM" if fm?
+    both = "FM & AM" if fm != false && fm == am 
+    return result = both || a || f
   end
   
 end

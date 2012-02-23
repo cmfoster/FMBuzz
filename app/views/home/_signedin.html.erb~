@@ -19,6 +19,6 @@
 
 <script>
 $(document).ready(function() {
-  $('#search').watermark('Search')
+  $('#search').Watermark('Search')
 });
 </script>

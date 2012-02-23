@@ -1,8 +1,148 @@
-// Place all the styles related to the shows controller here.
+// Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-//STATION LINK CARDS
-.station-link {
-  margin-left: 0;
-  background-color: red;
+.bottom {position: absolute; bottom:0;}
+/*CHAT ROOM STYLING, USER SIDE*/
+.usrmsg {  }
+
+#chatbox {
+  height: 70%;
+  width: 96%;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+}
+#chatbox #chatwall {
+    overflow-y:auto;
+    height: 85%;
+}
+#new_message_container {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+#new_message {
+ margin-bottom: 0; 
+}
+#message_msg {
+ width: 50%; 
+ margin-bottom: 0;  
+}
+/*FEATURES COLUMN STYLES*/
+#features-column h5 {
+  text-align: center;
+  color: #FFF;
+}
+#features-column p {
+ color: #FFF; 
+}
+#aboutshow {
+  padding: 10px;
+  bottom: 100px;
+  text-align: center;
+  width: 90%;
+}
+#aboutshow h6 {
+ text-align: center; 
+ border-bottom: 1px solid black;
+}
+#aboutshow p {
+ color: #FFF;
+ font-weight: 700;
+ margin-top: 5px;
+}
+/*QUESTIONS AND VOTING AREAS, WITHIN BOTTOM-FILTER*/
+#bottomrow {
+ width: 100%;
+ height: 100%;
+}
+#questionbox {
+  margin: 5px 25px;
+  width: 45%;
+  height: 95%;
+  position: relative;
+  overflow: hidden;
+}
+#questionbox .transparency {
+  opacity:0.5;  
+  filter:alpha(opacity=30);  
+  -moz-opacity:0.3;  
+  background-color: #000000;  
+  width:100%;  
+  height:100%;  
+  position:absolute;  
+  top:0px;  
+  left:0px;  
+  z-index:0;   
+}
+#questionbox #questionwall {
+ height: 85%;
+ overflow-y: auto;
+}
+#new_question_container {
+ width: 95%; 
+ padding: 0 10px 10px 10px;
+ 
+ text-align: center;
+}
+#new_question_container hr {
+ border: 1px solid gray;
+ margin-top: 0;
+ margin-bottom: 10px;
+}
+#new_question {
+  margin-bottom: 0;
+}
+#question_q {
+ width: 75%; 
+}
+#questionlist {
+  width: 95%; 
+  position: absolute;
+  top: 5px;
+  height: 60%;
+  overflow-y: scroll;
+  padding: 10px;
+}
+/*OPTIONS ROW WITHIN RIGHT-CONTENT*/
+#options-row {	
+  width: 100%;
+  height: 15%;
+  padding: 4px 0 0 25%;
+}
+#options-row h4 {
+ text-align: center;
+ width: 100px; 
+ height: 50.5px;
+ color: #ed3237;
+ font-size: 12.9px;
+ padding-top: 14.5px;
+ 
+}
+#options-row h4:hover {
+  -moz-box-shadow: 0 0 3px 3px #888;
+  -webkit-box-shadow: 0 0 3px 3px#888;
+  box-shadow: 0 0 3px 3px #ed3237;
+  background-color: #ed3237;
+  color: #FFF;
+}
+#options-row .activated {
+  background-color: #ed3237; 
+  color: #FFF;
+  opacity: .8;
+}
+/*REQUESTS BOX--------------------------------*/
+#requestboxspan {display:none;}
+#requestbox h3 {text-align: center;}
+#requestbox {
+ height: 70%;
+ width: 96%;
+ padding: 10px; 
+}
+#requestbox .span6 {
+ height: 100%;
+ overflow-y: scroll;
+}
+#requestbox .span8 {
+ height: 300px;
+ overflow-y: auto;
 }

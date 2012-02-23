@@ -13,7 +13,7 @@
       </div>
     </div>
 
-  <div id="home-logo" class="sticky border"></div>
+  <div id="home-logo" class="sticky"></div>
   <%= render :partial => 'partials/footer'%>
 </div>
 <% end %>

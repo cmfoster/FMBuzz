@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120220061354) do
+ActiveRecord::Schema.define(:version => 20120222220417) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -89,6 +89,8 @@ ActiveRecord::Schema.define(:version => 20120220061354) do
     t.text     "about"
     t.string   "topic"
     t.boolean  "requests_enabled"
+    t.boolean  "fm"
+    t.boolean  "am"
   end
 
   add_index "shows", ["email"], :name => "index_shows_on_email", :unique => true

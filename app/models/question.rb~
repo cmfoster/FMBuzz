@@ -1,8 +1,4 @@
 class Question < ActiveRecord::Base
   acts_as_votable
   belongs_to :show
-  
-  def toporder
-    sort{|a1, a2| a1.likes.size <=> a2.likes.size}
-  end
 end
