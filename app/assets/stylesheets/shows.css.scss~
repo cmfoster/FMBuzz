@@ -139,10 +139,27 @@
  padding: 10px; 
 }
 #requestbox .span6 {
- height: 100%;
+ height: 300px;
  overflow-y: scroll;
 }
 #requestbox .span8 {
  height: 300px;
  overflow-y: auto;
+}
+/*LEADER BOARD-----------------------------------*/
+#leaderboardspan { display: none;}
+#leaderboard h3 {text-align: center;}
+#leaderboard {
+  height: 70%;
+  width: 96%;
+  padding: 10px;
+}
+/*USER INTERACTION---------------------------------------*/
+#interactionboxspan {display: none;}
+#interactionbox h4 {text-align: center;}
+#interactionbox h4 colored {color: white;}
+#interactionbox {
+  height: 70%;
+  width: 96%;
+  padding: 10px;
 }

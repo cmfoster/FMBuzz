@@ -1,0 +1,24 @@
+<div id="interactionbox" class="border">
+  
+  <h4>Your interaction with <color><%= show.station %></color></h4>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+	<th>Name</th>
+	<th>Place</th>
+	<th>Points</th>
+	<th>Badges</th>
+	<th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td>current_user.name</td>
+	<td>(rank) ? waiting on Functionality</td>
+	<td>(Points)</td>
+	<td>(Badge Images)</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
