@@ -1,0 +1,17 @@
+	    <div id="leaderboard" class="border">
+	      <h3>Leaderboard</h3>
+	      <table class="table table-bordered">
+		<thead>
+		  <tr>
+		    <th>Place</th>
+		    <th>Name</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <td>2</td>
+		    <td>(Login name here)</td>
+		  </tr>
+		</tbody>
+	      </table>
+	    </div>

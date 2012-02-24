@@ -105,25 +105,26 @@
 }
 /*OPTIONS ROW WITHIN RIGHT-CONTENT*/
 #options-row {	
-  width: 100%;
+  width: 70%;
   height: 15%;
-  padding: 4px 0 0 25%;
+  padding: 0px 0 0 30%;
 }
 #options-row h4 {
  text-align: center;
  width: 100px; 
- height: 50.5px;
+ height: 60.5px;
  color: #ed3237;
  font-size: 12.9px;
- padding-top: 14.5px;
- 
+ padding-top: 17.5px;
+ margin-left: 0;
 }
 #options-row h4:hover {
-  -moz-box-shadow: 0 0 3px 3px #888;
+/*  -moz-box-shadow: 0 0 3px 3px #888;
   -webkit-box-shadow: 0 0 3px 3px#888;
   box-shadow: 0 0 3px 3px #ed3237;
-  background-color: #ed3237;
+  background-color: #ed3237;*/
   color: #FFF;
+  cursor: pointer;
 }
 #options-row .activated {
   background-color: #ed3237; 
@@ -157,7 +158,7 @@
 /*USER INTERACTION---------------------------------------*/
 #interactionboxspan {display: none;}
 #interactionbox h4 {text-align: center;}
-#interactionbox h4 colored {color: white;}
+#interactionbox h4 color {color: orange;}
 #interactionbox {
   height: 70%;
   width: 96%;

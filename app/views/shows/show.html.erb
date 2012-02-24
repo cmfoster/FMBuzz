@@ -61,12 +61,12 @@
 	  <div id="options-row" class="row ">
 <!--	      <h4 class="span4 border lb">Leader Board</h4>-->
 	      <% if user_signed_in? %>
-		<h4 class="span4 border usr">Your Stats</h4>
+		<h4 class="span4  usr">Your Stats</h4>
 	      <% end %>
 
-	      <h4 class="span4 border rm">Request Music</h4>
+	      <h4 class="span4  rm">Request Music</h4>
 
-	      <h4 class="span4 border cr activated">Chat Room</h4>
+	      <h4 class="span4  cr activated">Chat Room</h4>
 	
 	  </div>
 	</div>
@@ -149,5 +149,11 @@ TO MESS UP THE LAYOUT, TIME WAS SAVED BY KEEPING IT THIS WAY.-->
   });
  $(document).ready(function() {
  $("#question_q").Watermark("Ask your question");
+});
+// BUTTON COLORS
+$("#options-row h4").hover(function() {
+  $(this).animate({ backgroundColor: "#00aadd" }, 600);
+  },function() {
+  $(this).animate({ backgroundColor: "#303030" }, 400);
 });
 </script>
