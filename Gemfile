@@ -8,6 +8,7 @@ gem 'rails', '3.1.0'
 group :production do 
   gem 'pg'
 end
+gem 'tlsmail'
 gem 'sqlite3'
 gem 'devise'
 gem 'json'

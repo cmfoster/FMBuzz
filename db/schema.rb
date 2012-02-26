@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120222220417) do
+ActiveRecord::Schema.define(:version => 20120224191748) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -53,11 +53,20 @@ ActiveRecord::Schema.define(:version => 20120222220417) do
     t.datetime "m3u_updated_at"
   end
 
+  create_table "points", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "show_id"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", :force => true do |t|
     t.string   "q"
     t.integer  "show_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "request_ips", :force => true do |t|
@@ -91,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20120222220417) do
     t.boolean  "requests_enabled"
     t.boolean  "fm"
     t.boolean  "am"
+    t.boolean  "questions_enabled"
   end
 
   add_index "shows", ["email"], :name => "index_shows_on_email", :unique => true
@@ -117,6 +127,13 @@ ActiveRecord::Schema.define(:version => 20120222220417) do
     t.string   "favstation"
     t.string   "city"
     t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_points", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "point_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

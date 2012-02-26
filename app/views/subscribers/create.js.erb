@@ -1,8 +1,9 @@
 $('#feedback>div').css({display:'none'});
 $('.signupbar').css({display:'none'});
 <% if flash[:success]%>
+  $('#errors').html('');
   $('#new_subscriber').fadeOut('slow', function(){
-  $('#new_subscriber').replaceWith("<h1 id='success'>Thank you for subscribing!</h1>").fadeIn('slow');});
+  $('#new_subscriber').replaceWith("<h1 id='success'>Thank you for subscribing!</h1><p>You will recieve an email shortly.</p>").fadeIn('slow');});
 <% else %>
   $('.signup_error').show('slow');
   $('#errors').html('<%= flash[:error] %>')

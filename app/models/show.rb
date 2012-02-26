@@ -10,6 +10,7 @@ class Show < ActiveRecord::Base
   has_many :messages
   has_many :questions
   has_many :song_requests
+  has_many :points
   belongs_to :location
   
   def playlist_songs
@@ -59,6 +60,11 @@ class Show < ActiveRecord::Base
     f = "FM" if fm?
     both = "FM & AM" if fm != false && fm == am 
     return result = both || a || f
+  end
+  
+  def user_rank(point_record) #Find user rank
+    rank = points.index(point_record) + 1
+    return rank
   end
   
 end

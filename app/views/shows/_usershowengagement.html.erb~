@@ -13,9 +13,9 @@
     </thead>
     <tbody>
       <tr>
-	<td>current_user.name</td>
-	<td>(rank) ? waiting on Functionality</td>
-	<td>(Points)</td>
+	<td><%= current_user.name if current_user %></td>
+	<td><%= current_user.point_record(show)%></td>
+	<td><%= current_user.points.where(:show_id => show.id).first.points %></td>
 	<td>(Badge Images)</td>
       </tr>
     </tbody>

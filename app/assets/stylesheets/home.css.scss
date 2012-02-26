@@ -25,7 +25,9 @@ body {
 .border {border-radius: 8px; border: 1px solid black; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}
 //---------
 .topbar-inner {
+  background-color: #F5F5F5;
   background-image: -moz-linear-gradient(center top , #F5F5F5, #FFF);
+  background-image: -webkit-linear-gradient(top, #F5F5F5, #FFF);
 }
 .topbar .brand {
   color: gray;

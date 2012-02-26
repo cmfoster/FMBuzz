@@ -21,28 +21,27 @@ $(document).ready(function() {
   );
 });
 
-/*
+
 
 //INITIALIZE BUBBLES
-      $(BROKENdocument).ready(function() {
+//      $(BROKENdocument).ready(function() {
         //Build Bubble Machines with the Bubble Engine ------------------------
-        var SoapBubbleMachineNumber1 = $('fn').BubbleEngine({
-          particleSizeMin:            0,
-          particleSizeMax:            40,
-          particleSourceX:            $(window).width()/2-330,
-          particleSourceY:            230, // this Y and above X are the bubble locations
-          particleAnimationDuration:  5000,
-          particleDirection:          'center',
-          particleAnimationDuration:  5000,
-          particleAnimationVariance:  50,
-          particleScatteringX:        1,
-          particleScatteringY:        100,
-          gravity:                    -30
-        });
-        //Start Bubble Machines -----------------------------------------------
-        SoapBubbleMachineNumber1.addBubbles(1);
-      });*/
-
+//         var SoapBubbleMachineNumber1 = $('fn').BubbleEngine({
+//           particleSizeMin:            0,
+//           particleSizeMax:            40,
+//           particleSourceX:            $(window).width()/2-330,
+//           particleSourceY:            230, // this Y and above X are the bubble locations
+//           particleAnimationDuration:  5000,
+//           particleDirection:          'center',
+//           particleAnimationDuration:  5000,
+//           particleAnimationVariance:  50,
+//           particleScatteringX:        1,
+//           particleScatteringY:        100,
+//           gravity:                    -30
+//         });
+//         //Start Bubble Machines -----------------------------------------------
+//         SoapBubbleMachineNumber1.addBubbles(1);
+//       });
 
 
 // //COUNTDOWN LAYOUT
@@ -87,7 +86,7 @@ $(document).ready(function(){
 			$('.bar').css({display:'block'});
 		
 			//send ajax request
-			$.post('contactus.php',{name:$('#name').val(),
+			$.post('contact_us',{name:$('#name').val(),
 							  email:$('#e-mail').val(),
 							  message:$('#message').val()},
 		

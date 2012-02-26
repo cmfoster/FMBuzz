@@ -10,6 +10,7 @@ class Show < ActiveRecord::Base
   has_many :messages
   has_many :questions
   has_many :song_requests
+  has_many :points
   belongs_to :location
   
   def playlist_songs
@@ -40,7 +41,7 @@ class Show < ActiveRecord::Base
     end
   end
   
-  def toporder #changed to grab all questions made within the past day
+  def toporder #changed to grab all questions made within the past 24 hours
     q = self.questions.where(:created_at => 24.hours.ago..Time.now)
     return q.sort{|a1, a2| a2.likes.size <=> a1.likes.size}
   end
@@ -59,6 +60,11 @@ class Show < ActiveRecord::Base
     f = "FM" if fm?
     both = "FM & AM" if fm != false && fm == am 
     return result = both || a || f
+  end
+  
+  def user_rank(point_record) #Find user rank
+    rank = points(true).index(point_record) + 1
+    return rank
   end
   
 end

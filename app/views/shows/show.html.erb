@@ -7,6 +7,30 @@
 	    <p>Add streaming radio widget here, auto stream when page opened</p>
 	</div>
 	
+	<div class="topmembers">
+	  <h6>Top Members</h6>
+
+    <table class="table table-bordered">
+      <thead>
+	<tr>
+	  <th>Place</th>
+	  <th>Name</th>
+	  <th>Points</th>
+	</tr>
+      </thead>
+      <tbody>
+	<% @show.points.sort!{|a1,a2| a2.points<=>a1.points}.first(5).each do |record| %>
+	  <tr>
+	    <td><%= @show.user_rank(record.user.point_record(@show)) %></td>
+	    <td><%= record.user.name %></td>
+	    <td><%= record.points %></td>
+	  </tr>
+	<% end %>
+      </tbody>
+    </table>
+
+	</div>
+	
 	<div id="aboutshow" class="bottom">
 	  <span>
 	    <h6>About the show</h6>
@@ -49,24 +73,24 @@
 	    </div>
 	  </span>
 
-<!--	  <span id="leaderboardspan">
-	  THIS AND THE BUTTON HAS BEEN DISABLED UNTIL LEADERBOARD FUNCTIONALITY IS COMPLETE
+	  <span id="leaderboardspan">
 	    <%= render :partial => 'leaderboard', :locals => {:show => @show} %>
-	  </span>-->
+	  </span>
 
 	  <span id="interactionboxspan"> <!--DISPLAYS USER INTERACTION STATS WITH CURRENT SHOW-->
-	    <%= render :partial => 'usershowengagement', :locals => {:show => @show}%>
+	    <%= render :partial => 'usershowengagement', :locals => {:show => @show} if user_signed_in?%>
 	  </span>
 
 	  <div id="options-row" class="row ">
-<!--	      <h4 class="span4 border lb">Leader Board</h4>-->
+	      <h4 class="span4 lb">Leader Board</h4>
+
 	      <% if user_signed_in? %>
-		<h4 class="span4  usr">Your Stats</h4>
+		<h4 class="span4 usr">Your Stats</h4>
 	      <% end %>
 
-	      <h4 class="span4  rm">Request Music</h4>
+	      <h4 class="span4 rm">Request Music</h4>
 
-	      <h4 class="span4  cr activated">Chat Room</h4>
+	      <h4 class="span4 cr activated">Chat Room</h4>
 	
 	  </div>
 	</div>
@@ -152,8 +176,8 @@ TO MESS UP THE LAYOUT, TIME WAS SAVED BY KEEPING IT THIS WAY.-->
 });
 // BUTTON COLORS
 $("#options-row h4").hover(function() {
-  $(this).animate({ backgroundColor: "#00aadd" }, 600);
+  $(this).animate({ backgroundColor: "#00aadd" }, 200);
   },function() {
-  $(this).animate({ backgroundColor: "#303030" }, 400);
+  $(this).animate({ backgroundColor: "#303030" }, 100);
 });
 </script>

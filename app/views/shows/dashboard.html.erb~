@@ -1,213 +1,22 @@
-<style>
-
-  body {
-    background-color: #eee;
-}
-  .row#tools {
-    width: 80%;
-    height: 425px;
-    margin-left: 250px;
-/*    border: 1px solid black;*/
-}
-.row#bottom-row {
-    height: 100%;
-    width:100%; 
-    margin-left:0;
-/*    border:1px solid black;*/
-}
-  .well#chatusers {
-    overflow: auto;
-}
-
-.span8#chatbox {
-    background-color: #ABABAB;
-    border-radius: 2px 2px 2px 2px;
-    margin-left: 1px;
-    padding-left: 0px;
-    width: 748px;
-    height: 100%;
-}
-
-.span6#data {
-    background-color: #ABABAB;
-    border-radius: 2px 2px 2px 2px;
-    margin-right: 0;
-    height: 100%;
-}
-
-.span12#bottomtools {
-    background-color: #ABABAB;
-    margin: 20px 1px;
-    width: 100%;
-    height: 200px;
-    border-radius: 2px 2px 2px 2px;
-}
-
-.span8#left-toolbox {
-    width:748px; 
-    height:100%;
-/*    border:1px solid black;*/
-    margin-left: 0;
-    height: 100%;
-    background-color: #CBE86B;
-    border-radius: 2px 2px 2px 2px;
-
-}
-
-.span6#right-toolbox {
-    height:100%;
-/*    border: 1px solid black;*/
-    float: right;
-    width: 340px;
-    margin-left: 15px;
-    height: 100%;
-    background-color: #CBE86B;
-    border-radius: 2px 2px 2px 2px;
-
-
-}
-#cncl {
-    border: 1px solid #CCCCCC;
-    background-color: #CCCCCC;
-    border-radius: 3px 3px 3px 3px;
-    color: #808080;
-    display: inline-block;
-    font-size: 13px;
-    height: 18px;
-    line-height: 18px;
-    padding: 4px;
-}
-#addplaylist {
-    display:none;
-    width:748px; 
-    height:100%;
-    margin-left: 0;
-    height: 100%;
-    background-color: #CBE86B;
-    border-radius: 2px 2px 2px 2px;
-}
-.btn-fld {
-}
-.btn-fld [type=submit] {
-    margin-top: 15px;
-    margin-left: 240px;
-}
-.txt-fld label {
-    margin-right: 10px;
-}
-.modal {
-    width: 600px;
-    height: 500px;
-}
-
-/*The message format for chat ---------------------------*/
-p.chat-message {
-  font-size:14px;
-}
-.show-name {
-  color: #CCFF66;
-  font-weight: 900;
-}
-.host-name {
-  color: #FF9900;
-}
-</style>
-<%= subscribe_to "/show/chats"%>
-
-
 <div class="container-fluid">
-  <div class="sidebar">
-    <div class="well" id="chatusers">
-      <h5>User chat list(scrollable)</h5>
-      <ul>
-	<li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
-    </div>
-    <div class="well">
-      <div id="eventlinks">
-	<h5>Event Details</h5>
-	  <ul>
-	    <li><%= link_to "Set Show Name", '#', :id => 'set-name-btn'%></li>
-	    <li><%= link_to "Set Show Times", '#'%></li>
-	  </ul>
-      </div>
-      <div id="setname2" style="display:none">
-	<%=form_for current_show do |f| %>
-	  <%= f.text_field :name, :style => 'width:170px;' %>
-	  <%= f.submit "update", :class => 'submit-name', :style => 'margin-top: 5px;'%>
-	  <%= link_to "Cancel", '#', :class => 'submit-name', :id => 'cncl'%>
-	<%end%>
-      </div>
-    </div>
-    <div class="well">
-      <h5><%= link_to "Add Playlist", '#', :id => 'show-playlist', :class => 'btn green'%></h5>
-      <ul>
-      <% @playlists.each do |playlist|%>
-	<%= link_to "<li> #{playlist.name}</li>".html_safe, show_modalplaylist_path(:id => playlist.id), :remote => true if playlist.name %>
-      <% end %>
-      </ul>
-    </div>
-  </div>
-  <div class="row" id="tools">
-    <div class="span8" id="chatbox">
-      <h2 style="text-align:center"> <%="#{current_show.name}'s Social Chat"%></h2>
-      <hr style="margin-top:0; margin-bottom:5px;"/>
-      <%= render :partial => 'showchatdiv'%>
-    </div>
-  <div class="span6" id="data">
-    This will be where the hosts twitter stream and or Information box goes. This could hold fresh news data, something currently happening
-that he may want to talk to his audience about.
-  </div>
-  <div class="span12" id="bottomtools">
-    <div class="row" id="bottom-row">
-      <div class="span8" id="left-toolbox"> 
-	Any graph or analytics will go here. Anything that will help the Host do their job.
-	<span id='counter'>2</span>
-      </div>
-      <div class="span8" id="addplaylist"> 
-	<div id="container">
-	  <div class="container-i">
-	    <h3>New Playlist</h3>
-	    <%= form_for [@show, @playlist], :url => show_playlists_path, :action => :create, :html => { :multipart => true } do |f| %>
-	      <div class="txt-fld">
-		<%= f.label :name %>
-		<%= f.text_field :name, :style => 'border:1px solid black; width:195px;' %>
-		<div style="clear:both"></div>
-	      </div>
-	      <div class="txt-fld">
-		<%= f.label "nml / m3u file" %>
-		<%= f.file_field :m3u %>
-		<div style="clear:both"></div>
-	      </div>
-	      <div class="btn-fld">
-		<%= f.submit :class => 'btn submit' %>
-		<%= link_to "Cancel", '#', :class => 'btn cncl', :id => 'cancel-playlist'%>
-		<div style="clear:both"></div>
-	      </div>
-	    <% end %>
-	  </div>
+    <div id="middle-wrapper" class="span17">
+      <div id="row-content" class="row border">
+	<div id="features-column" class="span4">
+	  <p style="color:white">Show settings go here</p>
 	</div>
-      </div>
-      <div class="span6" id="right-toolbox">
-	<!-- Show Requests Here-->
-	<%= render :partial => 'partials/requestupdate'%>
+	<div id="right-content" class="span10">
+	  Interaction content and display
+	</div>
+	<div id="bottom-filler" class="span17">
+	  Live stats on users and such
+	</div>
+
       </div>
     </div>
-  </div>
-</div>
-<!--Modal Window-->
- <div class="modal hide fade" style="display: none;" >
- </div>
 
+  <div id="home-logo" class="sticky"></div>
+  <%= render :partial => 'partials/footer'%>
+</div>
 
 
 <script>
@@ -234,9 +43,11 @@ that he may want to talk to his audience about.
   });
   $(document).ready(
     function(){
+      jQuery('.sticky').stickyfloat({stickToBottom: true, duration: 100})
+
       setInterval(function(){
 	$('#right-toolbox').load('<%= escape_javascript(show_requests_path) %>');
-	$("#counter").flipCounter("renderCounter",<%= @messages.count%>).fadeIn("slow");
+	$("#counter").flipCounter("renderCounter",<%= @messages.count%>);
       }, 5000);
 
     });

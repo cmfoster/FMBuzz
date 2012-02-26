@@ -11,7 +11,7 @@ class ShowsController < ApplicationController
   end
   
   def show
-      @show = Show.find(params[:id])
+      @show = Show.find(params[:id])      
       @messages = @show.messages
       @message = @show.messages.build
       @locations = Location.all
@@ -41,6 +41,7 @@ class ShowsController < ApplicationController
     @playlists = @show.playlists
     @requests = @show.song_requests.where('created_at BETWEEN ? AND ?', current_show.start_time ,current_show.end_time)
     @message = @show.messages.build
+     :unsibscribe
   end
   
     
@@ -51,11 +52,11 @@ class ShowsController < ApplicationController
   
   def songlist
     if current_show && request.referer.scan('dashboard').size == 1
-      playlist = Playlist.find_by_id(params[:playlist_id])
+      @playlist = Playlist.find_by_id(params[:playlist_id])
       @artist = Artist.find_by_id(params[:artist_id])
       @artistsongs = Array.new
       @artist.songs.each do |song|
-	@artistsongs << song unless playlist.songs.where('id = ?', song.id) == false
+	@artistsongs << song unless @playlist.songs.where('id = ?', song.id) == false
       end
     else
       @show = Show.find_by_id(params[:show_id])

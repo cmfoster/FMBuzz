@@ -1,13 +1,4 @@
-<style>
-#success {
-  color: #4B4B4B;
-  font-family: "Arial Black",Arial,Helvetica,sans-serif;
-  font-size: 40px;
-  margin: 0 0 20px;
-  padding: 0;
-  text-align: center;
-}
-</style>
+
 
 <div id="page">
 <%= @request.state if @request%>
@@ -21,7 +12,7 @@
 	<h1 class="header1" id="interactbtn" style="margin-top:160px;">Interact with the radio host</h1>
 	<h1 class="header1" id="winbtn" style="margin-top: 320px;">Win points and prizes while you do it!</h1>
 	<%= image_tag('radio_waves.png', :id => 'radiowaves')%>
-	<%= image_tag('radio_tower.png', :width => 350, :height => 530, :id => 'radioimage')%>
+	<%= image_tag('radio_tower2.png', :width => 425, :height => 570, :id => 'radioimage')%>
 	<div id="progress" style="display:none"><img src="assets/launch-images/progress/50.png" alt="20%" /></div>
 	<div id="countdown" style="display:none" class=""></div>
     </div><!-- end sideleft -->
@@ -65,9 +56,9 @@
 	    <h1>Earn Points!</h1>
 	    <p><b>Points? Like, being charged points on a mortgage type points?</b> Um No...
 		Like, earn points by participating in the show through our interaction features type points.
-		Without going into too much deatil because we know you like suprises, you can use points to buy
+		Without going into too much deatil because we know you like suprises, you can <b>use points to buy
 		and download music, get free concert tickets, or win a paid for get away vacation. You can also win
-		any special prizes through contests show hosts run through our site. 
+		any special prizes through contests show hosts run through our site.</b> 
 	    </p> 
 	  </span> <!--end descriptions-->
 	</div><!-- end #content -->
@@ -110,10 +101,10 @@
 <!-- Below is the hidden contact form overlay code -->
 <div style='display:none'>
 	<div id="contactus" style='padding:10px; background:#fff;'>
-	<p class="intro">Hi there! Please use the contact form below if you have any questions related to this website. Alternatively you can send us an email to <a href="mailto:alchemy@zeglin.co.uk">alchemy@zeglin.co.uk</a>.</p>
+	<p class="intro">Hi there! Please use the contact form below if you have any questions related to this website. Alternatively you can send us an email to <a href="mailto:info@fmbuzz.com">info@fmbuzz.com</a>.</p>
 		<div class="loader"></div>
 		<div class="bar"></div>
-		<form action="contactus.php" class="contactUsForm" name="cform" method="post">
+		<form action="/contact" class="contactUsForm" name="cform" method="post">
 			<ul id="contactus_fields">
 				<li><label for="name">Your name:</label><span class="name-missing">Please enter your name</span></li>
 				<li class="border"><input id="name" type="text" value="" name="name" /></li>
@@ -129,65 +120,7 @@
 </div><!-- end of hidden contact form overlay -->
 <script>
 //   WARERMARKS
-  $(document).ready(function() {
-  $("#email").Watermark("Enter your email");
-    $("#favstation").Watermark("Your Favorite Station 'ie. WLTL'");
-    $('#new_subscriber').submit( function(){
-      $('.signuploader').append($('.signupbar'));
-      $('.signupbar').css({display:'block'});
-    });
-});
-// SIDELEFT BUTTON SLIDES
-$('#logo').click( function() {
-  if($('#description').is(':hidden')) {
-    $('#sideleft>h1:not(this)').removeClass("active");
-    $('#content>span:visible').hide('fast', function() {
-    $('#description').show('slide', {direction: "right"}, 700);
-    });
-  }
-});
-$('#listenbtn').click( function() {
-  if($('#description2').is(':hidden')) {
-    $('#sideleft>h1:not(this)').removeClass("active");
-    $('#content>span:visible').hide('fast', function() {
-      $('#description2').show('slide', {direction: "right"}, 700);
-      $('#listenbtn').addClass("active");
-    });
-  }
-});
-$('#interactbtn').click( function() {
-  if($('#description3').is(':hidden')) {
-    $('#sideleft>h1:not(this)').removeClass("active");
-    $('#content>span:visible').hide('fast', function() {
-      $('#description3').show('slide', {direction: "right"}, 700);
-      $('#interactbtn').addClass("active");
-    });
-  }
-});
-$('#winbtn').click( function() {
-  if($('#description4').is(':hidden')) {
-    $('#sideleft>h1:not(this)').removeClass("active");
-    $('#content>span:visible').hide('fast', function() {
-      $('#description4').show('slide', {direction: "right"}, 700);
-      $('#winbtn').addClass("active");
-    });
-  }
-});
-// START BUTTON TRANSITION
-$('#startbtn').click( function() {
-  $(this).hide('fast',function() {
-    $('#sform').fadeIn(2000);
-  });
-});
-// FADE LOOP
-$.fn.fadeLoop = function()
-{
-    $(this).delay(4000).animate({opacity: 0.25}, 1000, function() {
-        $(this).animate({opacity: .8}, 2000,  $(this).fadeLoop);
-    });
-};
 
-$(document).ready(function() {
-    $('#radiowaves').fadeLoop();
-});
+
+
 </script>

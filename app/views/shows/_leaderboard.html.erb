@@ -1,17 +1,23 @@
 <div id="leaderboard" class="border">
   <h3>Leaderboard</h3>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-	<th>Place</th>
-	<th>Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-	<td>2</td>
-	<td>(Login name here)</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="leaderboardtable">
+    <table class="table table-bordered">
+      <thead>
+	<tr>
+	  <th>Place</th>
+	  <th>Name</th>
+	  <th>Points</th>
+	</tr>
+      </thead>
+      <tbody>
+	<% show.points.sort!{|p1,p2| p2.points<=>p1.points}.each do |record| %>
+	  <tr>
+	    <td><%= show.user_rank(record.user.point_record(show)) %></td>
+	    <td><%= record.user.name %></td>
+	    <td><%= record.points %></td>
+	  </tr>
+	<% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

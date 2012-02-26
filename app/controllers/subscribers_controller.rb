@@ -2,7 +2,7 @@ class SubscribersController < ApplicationController
   respond_to :js
   
   def create
-    subscriber = Subscriber.create(params[:subscriber])
+    subscriber = Subscriber.create!(params[:subscriber])
     if result = request.location && result != nil
       subscriber.city = result[0].city if result[0].city
       subscriber.state = result[1].state if result[0].state
@@ -15,5 +15,10 @@ class SubscribersController < ApplicationController
       respond_with {flash[:error]}
     end
   end
+  end
+  
+  def contact_us
+    SubscriberMailer.contact_us(params).deliver # if Rails.env.production?
+    render :inline => "<div id='confirmation'><h3>You message has been sent.</h3><p>You should expect a response shortly.</p></div>".html_safe
   end
 end

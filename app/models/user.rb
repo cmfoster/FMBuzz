@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   has_many :song_requests
+  has_many :points
+  has_many :questions
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
@@ -23,6 +25,10 @@ class User < ActiveRecord::Base
         user.email = data["email"]
       end
     end
+  end
+  
+  def point_record(show) #Locate current points record for show
+    return record = points.find_by_show_id(show.id)
   end
 
 end

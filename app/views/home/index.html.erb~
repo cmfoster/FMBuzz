@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <% if user_signed_in? %>
+  <% if (user_signed_in?) %>
     <%= render :partial => 'signedin' %>
   <% else %>
     <div id="middle-wrapper" class="span17">

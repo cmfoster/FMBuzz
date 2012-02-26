@@ -86,7 +86,7 @@ $(document).ready(function(){
 			$('.bar').css({display:'block'});
 		
 			//send ajax request
-			$.post('contactus.php',{name:$('#name').val(),
+			$.post('/contact',{name:$('#name').val(),
 							  email:$('#e-mail').val(),
 							  message:$('#message').val()},
 		

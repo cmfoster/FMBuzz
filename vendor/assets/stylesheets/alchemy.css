@@ -3,6 +3,22 @@ html {background: none; height: 100%; margin: 0;}
 body {background: #0077aa url(launch-images/page_bg.png) repeat-x top; height: 100%; font-family: Arial, Helvetica, sans-serif; color: #fff; width: 100%; margin: 0; padding: 0}
 #page {width: 1100px; margin: 0px auto; font-family: Arial, Helvetica, sans-serif; font-size: 12px; position: relative; }
 .bubble {z-index: 1001;}
+
+#success {
+  color: #4B4B4B;
+  font-family: "Arial Black",Arial,Helvetica,sans-serif;
+  font-size: 40px;
+  margin: 0 0 20px;
+  padding: 0;
+  text-align: center;
+}
+#sform p {
+ color: #FFF;
+ background-color: red; 
+ opacity: .8;
+ border-radius: 40px;
+}
+
 /*HEAD ERRORS*/
 #errors {
   text-align: center;
@@ -65,14 +81,16 @@ body {background: #0077aa url(launch-images/page_bg.png) repeat-x top; height: 1
 }
 /* Image Radio Tower & WAVES*/
 #radioimage {
- margin-top: -50px;
+ margin-top: -90px;
  opacity: .3;
 }  
 #radiowaves {
   position: absolute;
-  margin-top: -125px;
-  margin-left: -55px;
+  left: -2px;
+  top: -50px;
   opacity: .1;
+  width: 450px;
+  height: 350px;
 }
 
 /* DIFFERENT COLOUR VERSIONS */
