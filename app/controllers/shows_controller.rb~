@@ -41,7 +41,8 @@ class ShowsController < ApplicationController
     @playlists = @show.playlists
     @requests = @show.song_requests.where('created_at BETWEEN ? AND ?', current_show.start_time ,current_show.end_time)
     @message = @show.messages.build
-     :unsibscribe
+    
+       
   end
   
     

@@ -38,7 +38,7 @@
 }
 #aboutshow {
   padding: 10px;
-  bottom: 100px;
+  bottom: 70px;
   text-align: center;
   width: 90%;
 }
@@ -159,7 +159,7 @@
 /*USER INTERACTION---------------------------------------*/
 #interactionboxspan {display: none;}
 #interactionbox h4 {text-align: center;}
-#interactionbox h4 color {color: orange;}
+#interactionbox h4 color {color: #FF9900;}
 #interactionbox {
   height: 70%;
   width: 96%;
@@ -167,11 +167,11 @@
 }
 /*TOPMEMBERS FEATURES COLUMN*/
 .topmembers {
-  margin: 25px auto;
+  margin: 0 auto;
   background-color: #FF9900;
   border-radius: 40px 0 40px 0;
   width: 90%;
-  height: 215px;
+  height: 190px;
   overflow: hidden;
   -moz-box-shadow: 0 0 3px 3px #888;
   -webkit-box-shadow: 0 0 3px 3px #888;

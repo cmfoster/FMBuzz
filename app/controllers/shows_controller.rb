@@ -28,7 +28,7 @@ class ShowsController < ApplicationController
       question.liked_by current_user if current_user && params[:vote] == 'up'
       question.disliked_by current_user if current_user && params[:vote] == 'down'
     end
-    @questions = @show.questions
+    @questions = @show.toporder
     respond_with @questions
   end
   

@@ -3,14 +3,14 @@
 <head>
 <!--  <link rel="shortcut icon" href="/images/favicon.ico" />-->
   <title><%= @city.city if @city%> Radio</title>
-  <%= stylesheet_link_tag 'application', 'home', 'shows' %>
+  <%= stylesheet_link_tag 'application', 'home', 'shows', 'jplayer' %>
   <%= javascript_include_tag  'application' %>
   <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tag %>
   <script type="text/javascript">
-
+<% if Rails.env.production? %>
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-25577355-3']);
+  _gaq.push(['_setAccount', 'UA-29521311-1']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -18,12 +18,24 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
+<% end %>
   $(function() {
     $('#flash').delay(500).fadeIn('normal', function() {
 	$(this).delay(2500).fadeOut('slow');
     });
   });
+
+    $(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+           <%= "mp3: '#{@show.stream_mp3}'" if @show.stream_mp3? %>,
+          });
+        },
+        swfPath: "/assets",
+        supplied: "<%= 'mp3' if @show.stream_mp3? %>",
+      });
+    });
 </script>
 
 <style>

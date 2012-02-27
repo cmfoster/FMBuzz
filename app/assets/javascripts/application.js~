@@ -14,6 +14,8 @@
 //= require twitter/bootstrap
 //= require private_pub
 //= require stickyfloat
+//= require jquery.jplayer.min
+
 
 
 
