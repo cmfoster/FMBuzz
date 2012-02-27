@@ -46,9 +46,7 @@ module FMBuzz
     config.assets.version = '1.0'
     
     #Manual precompile
-    config.assets.precompile += ['reset.css'];
-    config.assets.precompile += ['alchemy.css'];
-    config.assets.precompile += ['chrome.css'];
-    config.assets.precompile += ['colorbox.css'];
+    config.assets.precompile += ['*.js'];
+    config.assets.precompile += ['*.css'];
   end
 end

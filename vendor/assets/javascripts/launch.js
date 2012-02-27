@@ -102,10 +102,9 @@ $(document).ready(function() {
 			  $('.bar').css({display:'none'});
 			  $('.loader').append(data);
 			//waits 2000, then closes the form and fades out
-			setTimeout('parent.$.fn.colorbox.close()', 2500);
 			});
 			
-			setTimeout('parent.$.fn.colorbox.close()', 4500);
+			setTimeout('parent.$.fn.colorbox.close()', 3000);
 
 			//stay on the page
 			return false;

@@ -4,7 +4,7 @@ class SubscriberMailer < ActionMailer::Base
   def subscriber_email(subscriber)
     @subscriber = subscriber
     @url = "http://www.fmbuzz.com"
-    mail(:to => subscriber.email, :subject => "Test")
+    mail(:to => subscriber.email, :subject => "Thanks for subscribing to FM Buzz!")
   end
   
   def contact_us(params)

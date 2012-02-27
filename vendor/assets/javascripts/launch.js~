@@ -10,7 +10,7 @@
   $('#logo').click( function() {
     if($('#description').is(':hidden')) {
       $('#sideleft>h1:not(this)').removeClass("active");
-      $('#content>span:visible').hide('fast', function() {
+      $('#content>div:visible').hide('fast', function() {
       $('#description').show('slide', {direction: "right"}, 700);
       });
     }
@@ -27,7 +27,7 @@
   $('#interactbtn').click( function() {
     if($('#description3').is(':hidden')) {
       $('#sideleft>h1:not(this)').removeClass("active");
-      $('#content>span:visible').hide('fast', function() {
+      $('#content>div:visible').hide('fast', function() {
 	$('#description3').show('slide', {direction: "right"}, 700);
 	$('#interactbtn').addClass("active");
       });
@@ -36,7 +36,7 @@
   $('#winbtn').click( function() {
     if($('#description4').is(':hidden')) {
       $('#sideleft>h1:not(this)').removeClass("active");
-      $('#content>span:visible').hide('fast', function() {
+      $('#content>div:visible').hide('fast', function() {
 	$('#description4').show('slide', {direction: "right"}, 700);
 	$('#winbtn').addClass("active");
       });
@@ -102,10 +102,9 @@ $(document).ready(function() {
 			  $('.bar').css({display:'none'});
 			  $('.loader').append(data);
 			//waits 2000, then closes the form and fades out
-			setTimeout('parent.$.fn.colorbox.close()', 2500);
 			});
 			
-			setTimeout('parent.$.fn.colorbox.close()', 4500);
+			setTimeout('parent.$.fn.colorbox.close()', 2000);
 
 			//stay on the page
 			return false;
