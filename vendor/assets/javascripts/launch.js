@@ -10,7 +10,7 @@
   $('#logo').click( function() {
     if($('#description').is(':hidden')) {
       $('#sideleft>h1:not(this)').removeClass("active");
-      $('#content>span:visible').hide('fast', function() {
+      $('#content>div:visible').hide('fast', function() {
       $('#description').show('slide', {direction: "right"}, 700);
       });
     }
@@ -18,7 +18,7 @@
   $('#listenbtn').click( function() {
     if($('#description2').is(':hidden')) {
       $('#sideleft>h1:not(this)').removeClass("active");
-      $('#content>span:visible').hide('fast', function() {
+      $('#content>div:visible').hide('fast', function() {
 	$('#description2').show('slide', {direction: "right"}, 700);
 	$('#listenbtn').addClass("active");
       });
@@ -27,7 +27,7 @@
   $('#interactbtn').click( function() {
     if($('#description3').is(':hidden')) {
       $('#sideleft>h1:not(this)').removeClass("active");
-      $('#content>span:visible').hide('fast', function() {
+      $('#content>div:visible').hide('fast', function() {
 	$('#description3').show('slide', {direction: "right"}, 700);
 	$('#interactbtn').addClass("active");
       });
@@ -36,7 +36,7 @@
   $('#winbtn').click( function() {
     if($('#description4').is(':hidden')) {
       $('#sideleft>h1:not(this)').removeClass("active");
-      $('#content>span:visible').hide('fast', function() {
+      $('#content>div:visible').hide('fast', function() {
 	$('#description4').show('slide', {direction: "right"}, 700);
 	$('#winbtn').addClass("active");
       });

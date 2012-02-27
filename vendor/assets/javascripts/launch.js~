@@ -18,7 +18,7 @@
   $('#listenbtn').click( function() {
     if($('#description2').is(':hidden')) {
       $('#sideleft>h1:not(this)').removeClass("active");
-      $('#content>span:visible').hide('fast', function() {
+      $('#content>div:visible').hide('fast', function() {
 	$('#description2').show('slide', {direction: "right"}, 700);
 	$('#listenbtn').addClass("active");
       });
@@ -60,11 +60,9 @@ $.fn.fadeLoop = function()
 };
 
 $(document).ready(function() {
-    $('#radiowaves').fadeLoop();
-});
-//CONTACT US FORM
-$(document).ready(function(){
-
+  $('#radiowaves').fadeLoop();
+    
+    //CONTACT US FORM
    //submittimg contact us form
   $('.contactUsForm').submit( function(){
 

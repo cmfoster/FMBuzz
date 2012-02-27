@@ -13,7 +13,7 @@
 //= require launch
 //= require twitter/bootstrap
 //= require private_pub
-//= require stickyscroll
+//= require stickyfloat
 
 
 

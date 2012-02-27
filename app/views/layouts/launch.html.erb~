@@ -2,8 +2,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>FM BuZZ</title>
-<%= stylesheet_link_tag 'launch' %>
+<meta name="keywords" content="radio, online radio, fm, am, radio stream, news, music radio, music, chicago, illinois, radio station" />
+<meta name="description" content="Listen to your favorite stations, Win points & prizes, and discuss among other like minded individuals" />
+<title>FM Buzz</title>
+<%= stylesheet_link_tag 'reset', 'alchemy', 'colorbox', 'chrome' %>
 <%= javascript_include_tag 'launch' %>
 <link href='http://fonts.googleapis.com/css?family=Lato:regular,regularitalic,900' rel='stylesheet' type='text/css' />
 <script type="text/javascript">

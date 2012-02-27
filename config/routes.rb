@@ -1,31 +1,35 @@
 FMBuzz::Application.routes.draw do
  
-  devise_for :shows
-  devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
-  resources :subscribers, :only => [:create]
-  match '/contact' => 'subscribers#contact_us'
   if Rails.env.production?
-    root :to => 'home#index'
-  else
-    root :to => 'home#launch'
-  end
 
-  #   root :to => 'home#index'
+    devise_for :shows
+    devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 
+    
+    root :to => 'home#index'
+    
+    resources :users
+    
+    resources :shows do
+      resources :playlists
+      resources :messages
+      resources :questions
+      get :requests
+      get :vote
+      get :dashboard
+      get :modalplaylist
+      get :songlist
+    end
+    
+    resources :song_requests, :only => [:create]
+    resources :playlists, :only => [:show]
+    match '/city' => 'home#cityindex'
   
-  resources :users
-  
-  resources :shows do
-    resources :playlists
-    resources :messages
-    resources :questions
-    get :requests
-    get :vote
-    get :dashboard
-    get :modalplaylist
-    get :songlist
+  else
+    
+    root :to => 'home#launch'
+    resources :subscribers, :only => [:create]
+    match '/contact' => 'subscribers#contact_us'
+    
   end
   
-  resources :song_requests, :only => [:create]
-  resources :playlists, :only => [:show]
-  match '/city' => 'home#cityindex'
 end
