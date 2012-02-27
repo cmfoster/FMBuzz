@@ -3,9 +3,9 @@ class SubscribersController < ApplicationController
   
   def create
     subscriber = Subscriber.create(params[:subscriber])
-    if result = request.location && result != nil
-      subscriber.city = result[0].city if result[0].city
-      subscriber.state = result[1].state if result[0].state
+    if result = request.location
+      subscriber.city = result.city if result.city
+      subscriber.state = result.state if result.state
     end
     if subscriber.save
       SubscriberMailer.subscriber_email(subscriber).deliver if Rails.env.production?

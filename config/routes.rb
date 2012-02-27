@@ -1,6 +1,6 @@
 FMBuzz::Application.routes.draw do
  
-  if Rails.env.production?
+  if Rails.env.development?
 
     devise_for :shows
     devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } 

@@ -1,10 +1,5 @@
-
-
 <div id="page">
 <%= @request.state if @request%>
-<!--  <%= image_tag('logofirst.png', :width => 260, :height => 250)%>
-  <%= image_tag('logosecond.png', :width => 240, :height => 85, :id => 'logosecond', :style => 'margin-left:-20px;display:inline;padding-bottom:65px;')%>
-  <%= image_tag('slogan.png', :id => 'slogan', :style => 'display:none')%>-->
 <div id="logo"><%= image_tag('logo.png', :width => 460, :height => 250)%></div>
 <div class="topsection">
     <div id="sideleft">
@@ -27,7 +22,7 @@
     <div id="sideright">
 	<div id="content"> <!--Interchangable descriptions-->
 	  <div id="description"><!--Interchangable descriptions HIDDEN-->
-	    <h1>Communication is beautiful.</h1>
+	    <h1>Communication is beautiful.<%= request.location.city%></h1>
 	    <p>We know people like to listen to the radio whether AM talk for FM music,
 		but we also know people love to voice their opinions or request music. Realizing
 		the large communication gap between a radio show host and his listeners
