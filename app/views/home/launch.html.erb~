@@ -45,14 +45,14 @@
 		on the requests he gets, so <b>the more you request the better the music will get!</b>
 	    </p> 
 	  </div>
-	  <span id="description3" style="display:none">
+	  <div id="description3" style="display:none">
 	    <h1>Interaction.</h1>
 	    <p><b>So, I can chat with members of the show without calling or texting silly numbers? Yes!</b>
 		Not only can you chat with members of the show, you can chat with other like minded listening members. We have a slew 
 		of other features that only beta members will have the privilage of using. <b>Sign up below and become part of the show!</b>
 	    </p> 
-	  </span>
-	  <span id="description4" style="display:none">
+	  </div>
+	  <div id="description4" style="display:none">
 	    <h1>Earn Points!</h1>
 	    <p><b>Points? Like, being charged points on a mortgage type points?</b> Um No...
 		Like, earn points by participating in the show through our interaction features type points.
@@ -60,7 +60,7 @@
 		and download music, get free concert tickets, or win a paid for get away vacation. You can also win
 		any special prizes through contests show hosts run through our site.</b> 
 	    </p> 
-	  </span> <!--end descriptions-->
+	  </div> <!--end descriptions-->
 	</div><!-- end #content -->
 	<div id="newsletter" style="text-align: center;">
 	  <span id="startbtn">Click Here</span>
