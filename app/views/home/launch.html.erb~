@@ -7,7 +7,7 @@
 	<h1 class="header1" id="interactbtn" style="margin-top:160px;">Interact with the radio host</h1>
 	<h1 class="header1" id="winbtn" style="margin-top: 320px;">Win points and prizes while you do it!</h1>
 	<%= image_tag('radio_waves.png', :id => 'radiowaves')%>
-	<%= image_tag('radio_tower2.png', :width => 425, :height => 570, :id => 'radioimage')%>
+	<%= image_tag('radiotower.png', :id => 'radioimage')%>
 	<div id="progress" style="display:none"><img src="assets/launch-images/progress/50.png" alt="20%" /></div>
 	<div id="countdown" style="display:none" class=""></div>
     </div><!-- end sideleft -->
@@ -22,7 +22,7 @@
     <div id="sideright">
 	<div id="content"> <!--Interchangable descriptions-->
 	  <div id="description"><!--Interchangable descriptions HIDDEN-->
-	    <h1>Communication is beautiful.<%= request.location.city%></h1>
+	    <h1>Communication is beautiful.</h1>
 	    <p>We know people like to listen to the radio whether AM talk for FM music,
 		but we also know people love to voice their opinions or request music. Realizing
 		the large communication gap between a radio show host and his listeners

@@ -75,14 +75,9 @@
   left:0px;  
   z-index:0;   
 }
-#questionbox #questionwall {
- height: 85%;
- overflow-y: auto;
-}
 #new_question_container {
  width: 95%; 
  padding: 0 10px 10px 10px;
- 
  text-align: center;
 }
 #new_question_container hr {
@@ -101,7 +96,7 @@
   position: absolute;
   top: 5px;
   height: 60%;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 10px;
 }
 /*OPTIONS ROW WITHIN RIGHT-CONTENT*/

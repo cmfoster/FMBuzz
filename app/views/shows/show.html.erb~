@@ -4,7 +4,7 @@
 	<div id="features-column" class="span4" style="position:relative;">
 	<div class="stream-link">  
 	  <h5><%= @show.station.upcase || "" %> <%= @show.modulation%></h5>
-	  <%= render :partial => 'player' :locals => {:show => @show}%>
+	  <%= render :partial => 'player', :locals => {:show => @show}%>
 	</div>
 	
 	<div class="topmembers">
@@ -88,7 +88,9 @@
 		<h4 class="span4 usr">Your Stats</h4>
 	      <% end %>
 
-	      <h4 class="span4 rm">Request Music</h4>
+	      <% if @show.requests_enabled == false%>
+		<h4 class="span4 rm">Request Music</h4>
+	      <% end %>
 
 	      <h4 class="span4 cr activated">Chat Room</h4>
 	

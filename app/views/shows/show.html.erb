@@ -88,7 +88,9 @@
 		<h4 class="span4 usr">Your Stats</h4>
 	      <% end %>
 
-	      <h4 class="span4 rm">Request Music</h4>
+	      <% if @show.requests_enabled?%>
+		<h4 class="span4 rm">Request Music</h4>
+	      <% end %>
 
 	      <h4 class="span4 cr activated">Chat Room</h4>
 	
