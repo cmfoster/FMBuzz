@@ -1,5 +1,0 @@
-class Playlistable < ActiveRecord::Base
-  belongs_to :playlist
-  belongs_to :artist
-  validates_presence_of :artist_id, :playlist_id
-end
