@@ -1,2 +1,0 @@
-$("#questionlist").append("<%= escape_javascript render(@question), :locals => {:question => @question} %>").fadeIn("slow");
-$("#question_q").val('');

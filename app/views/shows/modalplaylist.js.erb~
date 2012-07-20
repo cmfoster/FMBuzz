@@ -1,2 +1,0 @@
-$('.modal').html("<%= escape_javascript(render :partial => 'playlist') %>");
-$('.modal').modal('show', {keyboard: true, backdrop: true} );

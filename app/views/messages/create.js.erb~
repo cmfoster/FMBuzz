@@ -1,6 +1,0 @@
-<% publish_to "/show/chats" do %>
-      $("#chatwall").prepend("<%= j render(@message) %>");
-      $("#messagelist").prepend("<%= j render(@message) %>");
-    <% end %>
-$("#message_msg").val('');
-

@@ -1,5 +1,0 @@
-<ul class="unstyled">
-  <% for show in @radioshows %>
-    <li><p><%= show.name %><p></li>
-  <% end %>
-</ul>
